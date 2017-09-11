@@ -295,6 +295,10 @@
         chatWindow = window.open(chatUrl, 'Live Help', 'resizable=1,width=300,height=300,top:100,left:100');
       }
     };
+    $scope.sayOffline = function(evt){
+      evt && evt.stopPropagation();
+      alert("Offline");
+    };
 
   }]); //end definition of LiveHelpController
 
