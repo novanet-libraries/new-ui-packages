@@ -1,0 +1,34 @@
+<div id="novanet-live-help">
+  <md-fab-speed-dial md-direction="left" md-open="false" class="md-scale">
+     <md-fab-trigger>
+       <md-button aria-label="Get Help!" class="md-fab md-raised">
+         <md-tooltip md-autohide="false" md-direction="top">Get Help</md-tooltip>
+         <md-icon md-svg-icon="communication:ic_live_help_24px"></md-icon>
+       </md-button>
+     </md-fab-trigger>
+     
+     <md-fab-actions>
+       <md-button aria-label="Live Help" class="md-fab md-raised md-mini libraryh3lp"  ng-click="showChat($event);" jid="novanet@chat.libraryh3lp.com" style="display:none">
+         <md-tooltip md-autohide="false" md-direction="bottom">Live Help</md-tooltip>
+         <md-icon md-svg-icon="communication:ic_chat_24px"></md-icon>
+       </md-button>
+       <md-button aria-label="Live Help Offline" class="md-fab md-raised md-mini md-warn libraryh3lp" style="display:none">
+         <md-tooltip md-autohide="false" md-direction="bottom">Live Help Offline</md-tooltip>
+         <md-icon md-svg-icon="content:ic_block_24px"></md-icon>
+       </md-button>       
+       <md-button aria-label="Email" class="md-fab md-raised md-mini">
+         <md-tooltip md-autohide="false" md-direction="top">Email</md-tooltip>
+         <md-icon md-svg-icon="communication:ic_email_24px"></md-icon>
+       </md-button>
+       <md-button aria-label="Phone" class="md-fab md-raised md-mini">
+         <md-tooltip md-autohide="false" md-direction="bottom">Phone</md-tooltip>
+         <md-icon md-svg-icon="communication:ic_phone_24px"></md-icon>
+       </md-button>
+       <md-button aria-label="Subject Guides" class="md-fab md-raised md-mini" ng-href="https://stfx.libguides.com">
+         <md-tooltip md-autohide="false" md-direction="top">Subject Guides</md-tooltip>
+         <md-icon md-svg-icon="av:ic_web_24px"></md-icon>
+       </md-button>
+     </md-fab-actions>
+       
+  </md-fab-speed-dial>
+</div>
