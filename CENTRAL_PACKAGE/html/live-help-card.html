@@ -5,16 +5,12 @@
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
-    <p jid="novanet@chat.libraryh3lp.com" class="libraryh3lp" style="display:none">
-      <a href ng-click="showChat($event);">Ask a librarian</a> how to start your search.
-    </p>
-    <p class="libraryh3lp" style="display:none">
-      <div>
-        <a href ng-click="sayOffline($event);">Ask a librarian</a> how to start your search.
-      </div>
-      <div>
-        <md-icon md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.
-      </div>
-    </p>
+    <div jid="novanet@chat.libraryh3lp.com" class="libraryh3lp" style="display:none">
+      <p><a href ng-click="showChat($event);">Ask a librarian</a> how to start your search.</p>
+    </div>
+    <div class="libraryh3lp" style="display:none">
+      <p><a href ng-click="sayOffline($event);">Ask a librarian</a> how to start your search.</p>
+      <p><md-icon md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.</p>
+    </div>
   </md-card-content>
 </md-card>
