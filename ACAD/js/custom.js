@@ -20,6 +20,8 @@
 
     $scope.searchWorldcat = function(){
       var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
+      console.log(searchFields);
+
       if (searchFields.advancedSearch){
         terms = searchFields.searchParams.query.join(" ");
       }
@@ -29,10 +31,11 @@
       window.open("https://www.worldcat.org/search?q=" + encodeURIComponent(terms), "_blank");
       
       console.log("Opened new window to worldcat");
-      console.log(searchFields);
     };
     $scope.searchGoogleScholar = function(){
       var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
+      console.log(searchFields);
+
       if (searchFields.advancedSearch){
         terms = searchFields.searchParams.query.join(" ");
       }
@@ -42,7 +45,6 @@
       window.open("https://scholar.google.ca/scholar?q=" + encodeURIComponent(terms), "_blank");
       
       console.log("Opened new window to Google Scholar");
-      console.log(searchFields);
     };
     
     vm.$onInit = function(){
