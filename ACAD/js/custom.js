@@ -8,7 +8,7 @@
   app.component('prmSearchResultListAfter', {
     controller: 'SearchElsewhereController',
     bindings: {
-      'parentCtrl': '='
+      'parentCtrl': '<'
     },
     template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;">' +
                 '<p><a id="searchWorldCat" target="_blank" href="https://www.worldcat.org?q=">try your search in WorldCat</a></p>' +
@@ -16,33 +16,32 @@
               '</div>'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
-    var vm = this,
-        getTerms = function(){
-          var terms = "",
-              searchFields = vm.parentCtrl.searchService.searchFieldsService;
-          if (searchFields.advancedSearch){
-            terms = "";
-            searchFields.searchParams.query.forEach(function(t){
-              terms += t.replace(/^[^,]+,[^,]+,/, '').replace(/,[^,]+$/, '') + " ";
-            });
-            terms = terms.replace(/^\s+|\s+$/, "");
-          }
-          else{
-            terms = searchFields.mainSearch;
-          }
-          return terms || "";
-        };
-
+    var vm = this;
+    
     vm.$onInit = function(){
-      var terms = getTerms(),
-          worldCatLink      = angular.element(document.getElementById("searchWorldCat")),
-          googleScholarLink = angular.element(document.getElementById("searchGoogleScholar"));
+      var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
+          
+      if (searchFields.advancedSearch){
+        searchFields.searchParams.query.forEach(function(t){
+          terms += t.replace(/^[^,]+,[^,]+,/, "").replace(/,[^,]+$/, "") + " ";
+        });
+        terms = terms.replace(/^\s+|\s+$/, "");
+      }
+      else{
+        terms = searchFields.mainSearch;
+      }
 
-      worldCatLink.attr("href", "https://www.worldcat.org/search?q=" + encodeURIComponent(terms));
-      googleScholarLink.attr("href", "https://scholar.google.ca/scholar?q=" + encodeURIComponent(terms));
+      //worldcat
+      angular.element(
+        document.getElementById("searchWorldCat")
+      ).attr("href", "https://www.worldcat.org/search?q=" + encodeURIComponent(terms));
+      
+      //google scholar
+      angular.element(
+        document.getElementById("searchGoogleScholar")
+      ).attr("href", "https://scholar.google.ca/scholar?q=" + encodeURIComponent(terms));
     };
   }]);
-
 
 
   //add LiveHelp button/options
