@@ -3,37 +3,34 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
-  /*
+  
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
     controller: 'SearchElsewhereController',
     bindings: {
       'parentCtrl': '='
     },
-    template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;"><a href="#" ng-click="searchWorldcat()">try your search in WorldCat</a></div>'
+    template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;"><a href="#" ng-click="searchWorldcat();">try your search in WorldCat</a></div>'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
     var vm = this;
 
     $scope.searchWorldcat = function(){
-      console.log(vm.parentCtrl.searchService.searchFieldsService);
       var searchFields = vm.parentCtrl.searchService.searchFieldsService;
       if (searchFields.advancedSearch){
-        //collect terms from the searchFields.searchParams.query Array.
+        terms = searchFields.searchParams.query.join(" ");
       }
       else{
-        //just use 'mainSearch'.
-        console.log("worldcat URL = worldcat url for " + window.appConfig.vid);
-        console.log("terms: " + vm.parentCtrl.searchService.searchFieldsService.mainSearch);
+        terms = searchFields.mainSearch;
       }
+      window.open("https://www.worldcat.org/search?q=" + encodeURIComponent(terms), "_blank");
     };
     
     vm.$onInit = function(){
       console.log('SearchElsewhereController $onInit()');
-
     };
   }]);
-  */
+  
   
   
   //add LiveHelp button/options
