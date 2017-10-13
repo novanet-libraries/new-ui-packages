@@ -3,7 +3,7 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
-  
+
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
     controller: 'SearchElsewhereController',
@@ -11,8 +11,8 @@
       'parentCtrl': '='
     },
     template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;">' +
-                '<p><a href="" ng-click="searchWorldcat();">try your search in WorldCat</a></p>' +
-                '<p><a href="" ng-click="searchGoogleScholar();">try your search in Google Scholar</a></p>' +
+                '<p><a id="searchWorldCat" target="_blank" href="https://www.worldcat.org?q=">try your search in WorldCat</a></p>' +
+                '<p><a id="searchGoogleScholar" target="_blank" href="https://scholar.google.ca/scholar?q=">try your search in Google Scholar</a></p>' +
               '</div>'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
@@ -33,20 +33,18 @@
           return terms || "";
         };
 
-    $scope.searchWorldcat = function(){
-      window.open("https://www.worldcat.org/search?q=" + encodeURIComponent(getTerms()), "_blank");      
-    };
-    $scope.searchGoogleScholar = function(){
-      window.open("https://scholar.google.ca/scholar?q=" + encodeURIComponent(getTerms()), "_blank");
-    };
-    
     vm.$onInit = function(){
-      console.log('SearchElsewhereController $onInit()');
+      var terms = getTerms(),
+          worldCatLink      = angular.element(document.getElementById("searchWorldCat")),
+          googleScholarLink = angular.element(document.getElementById("searchGoogleScholar"));
+
+      worldCatLink.attr("href", "https://www.worldcat.org/search?q=" + encodeURIComponent(terms));
+      googleScholarLink.attr("href", "https://scholar.google.ca/scholar?q=" + encodeURIComponent(terms));
     };
   }]);
-  
-  
-  
+
+
+
   //add LiveHelp button/options
   app.component('prmExploreMainAfter', {
     controller: 'LiveHelpController',
@@ -97,6 +95,6 @@
       }
     };
 
-  }]); //end definition of LiveHelpController      
+  }]); //end definition of LiveHelpController
 
 })();
