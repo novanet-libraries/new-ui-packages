@@ -16,35 +16,28 @@
               '</div>'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
-    var vm = this;
+    var vm = this,
+        getTerms = function(){
+          var terms = "",
+              searchFields = vm.parentCtrl.searchService.searchFieldsService;
+          if (searchFields.advancedSearch){
+            terms = "";
+            searchFields.searchParams.query.forEach(function(t){
+              terms += t.replace(/^[^,]+,[^,]+,/, '').replace(/,[^,]+$/, '') + " ";
+            });
+            terms = terms.replace(/^\s+|\s+$/, "");
+          }
+          else{
+            terms = searchFields.mainSearch;
+          }
+          return terms || "";
+        };
 
     $scope.searchWorldcat = function(){
-      var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
-      console.log(searchFields);
-
-      if (searchFields.advancedSearch){
-        terms = searchFields.searchParams.query.join(" ");
-      }
-      else{
-        terms = searchFields.mainSearch;
-      }
-      window.open("https://www.worldcat.org/search?q=" + encodeURIComponent(terms), "_blank");
-      
-      console.log("Opened new window to worldcat");
+      window.open("https://www.worldcat.org/search?q=" + encodeURIComponent(getTerms()), "_blank");      
     };
     $scope.searchGoogleScholar = function(){
-      var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
-      console.log(searchFields);
-
-      if (searchFields.advancedSearch){
-        terms = searchFields.searchParams.query.join(" ");
-      }
-      else{
-        terms = searchFields.mainSearch;
-      }
-      window.open("https://scholar.google.ca/scholar?q=" + encodeURIComponent(terms), "_blank");
-      
-      console.log("Opened new window to Google Scholar");
+      window.open("https://scholar.google.ca/scholar?q=" + encodeURIComponent(getTerms()), "_blank");
     };
     
     vm.$onInit = function(){
