@@ -24,6 +24,9 @@
         terms = searchFields.mainSearch;
       }
       window.open("https://www.worldcat.org/search?q=" + encodeURIComponent(terms), "_blank");
+      
+      console.log("Opened new window to worldcat");
+      console.log(searchFields);
     };
     
     vm.$onInit = function(){
