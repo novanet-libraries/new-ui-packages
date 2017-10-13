@@ -16,7 +16,7 @@
     var vm = this;
 
     $scope.searchWorldcat = function(){
-      var searchFields = vm.parentCtrl.searchService.searchFieldsService;
+      var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
       if (searchFields.advancedSearch){
         terms = searchFields.searchParams.query.join(" ");
       }
