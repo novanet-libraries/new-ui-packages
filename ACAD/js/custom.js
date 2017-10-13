@@ -10,7 +10,8 @@
     bindings: {
       'parentCtrl': '='
     },
-    template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;"><a href="#" ng-click="searchWorldcat();">try your search in WorldCat</a></div>'
+    template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;"><a href="#" ng-click="searchWorldcat();">try your search in WorldCat</a></div>' +
+              '<div style="position:absolute;top:20;left:0;background-color:black;color:white;"><a href="#" ng-click="searchGoogleScholar();">try your search in Google Scholar</a></div>'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
     var vm = this;
@@ -26,6 +27,19 @@
       window.open("https://www.worldcat.org/search?q=" + encodeURIComponent(terms), "_blank");
       
       console.log("Opened new window to worldcat");
+      console.log(searchFields);
+    };
+    $scope.searchGoogleScholar = function(){
+      var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
+      if (searchFields.advancedSearch){
+        terms = searchFields.searchParams.query.join(" ");
+      }
+      else{
+        terms = searchFields.mainSearch;
+      }
+      window.open("https://scholar.google.ca/scholar?q=" + encodeURIComponent(terms), "_blank");
+      
+      console.log("Opened new window to Google Scholar");
       console.log(searchFields);
     };
     
