@@ -11,8 +11,8 @@
       'parentCtrl': '='
     },
     template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;">' +
-                '<p><a href="#" ng-click="searchWorldcat();">try your search in WorldCat</a></p>' +
-                '<p><a href="#" ng-click="searchGoogleScholar();">try your search in Google Scholar</a></p>' +
+                '<p><a href="" ng-click="searchWorldcat();">try your search in WorldCat</a></p>' +
+                '<p><a href="" ng-click="searchGoogleScholar();">try your search in Google Scholar</a></p>' +
               '</div>'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
