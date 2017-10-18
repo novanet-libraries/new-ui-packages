@@ -9,10 +9,7 @@
     bindings: {
       'parentCtrl': '<'
     },
-    template: '<div style="position:absolute;top:0;left:0;background-color:black;color:white;">' +
-                '<p><a id="searchWorldCat" target="_blank" href="https://www.worldcat.org?q=">try your search in WorldCat</a></p>' +
-                '<p><a id="searchGoogleScholar" target="_blank" href="https://scholar.google.ca/scholar?q=">try your search in Google Scholar</a></p>' +
-              '</div>'
+    templateUrl: 'custom/ACAD/html/search-elsewhere.html'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
     var vm = this;
