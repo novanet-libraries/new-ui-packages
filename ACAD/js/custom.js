@@ -3,42 +3,6 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
-  //add "try this search elsewhere" options
-  app.component('prmSearchResultListAfter', {
-    controller: 'SearchElsewhereController',
-    bindings: {
-      'parentCtrl': '<'
-    },
-    templateUrl: 'custom/ACAD/html/search-elsewhere.html'
-  })
-  .controller('SearchElsewhereController', ['$scope', function($scope){
-    var vm = this;
-
-    vm.$onInit = function(){
-      var terms = "", searchFields = vm.parentCtrl.searchService.searchFieldsService;
-
-      if (searchFields.advancedSearch){
-        searchFields.searchParams.query.forEach(function(t){
-          terms += t.replace(/^[^,]+,[^,]+,/, "").replace(/,[^,]+$/, "") + " ";
-        });
-        terms = terms.replace(/^\s+|\s+$/, "");
-      }
-      else{
-        terms = searchFields.mainSearch;
-      }
-
-      //worldcat
-      angular.element(
-        document.getElementById("searchWorldCat")
-      ).attr("href", "https://www.worldcat.org/search?q=" + encodeURIComponent(terms));
-
-      //google scholar
-      angular.element(
-        document.getElementById("searchGoogleScholar")
-      ).attr("href", "https://scholar.google.ca/scholar?q=" + encodeURIComponent(terms));
-    };
-  }]);
-
   //add LiveHelp button/options
   app.component('prmExploreMainAfter', {
     controller: 'LiveHelpController',

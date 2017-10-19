@@ -411,3 +411,8 @@ prm-advanced-search .uppercase { font-weight: bold; }
 /* hide the day and month drop-downs, but leave the year (not a drop-down) */
 /* prm-advanced-search .date-range-inputs md-select { display: none; }     */
 
+
+/***** Search Results List ****/
+
+/* adding the 'search elsewhere' box removes the need for this spacer */
+prm-search-result-list .list-spacer { height: 10px ; min-height: 10px; }
