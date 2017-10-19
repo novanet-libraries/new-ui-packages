@@ -11,6 +11,62 @@
   }).controller('SeasonalNoticeController', function(){
     //do show/hide ??
   });
+
+  //add "try this search elsewhere" options
+  app.component('prmSearchResultListAfter', {
+    controller: 'SearchElsewhereController',
+    bindings: {
+      'parentCtrl': '<'
+    },
+    templateUrl: 'custom/CENTRAL_PACKAGE/html/search-elsewhere.html'
+  })
+  .controller('SearchElsewhereController', ['$scope', function($scope){
+    var vm = this, gsInstIds = {
+      ACAD:  '4382908539753259136',
+      AST:   '4414605408550952312',
+      CBU:   '9331274502214916509',
+      DAL:   '5975043576360107395',
+      KINGS: '5975043576360107395', //using Dal's
+      MSVU:  '17224971713671833064',
+      NSCC:  '6441348662430423134',
+      NSCAD: '12584370207272605175',
+      SMU:   '231651475990452367',
+      STFX:  '8335306489616302259',
+      USA:   '4402118154602451548'
+    };
+
+    $scope.isSearchDone = function(){
+      //return !vm.parentCtrl.searchInProgress;
+      return vm.parentCtrl.resultsExists;
+    };
+    
+    vm.$onInit = function(){
+      var terms = '', searchFields = vm.parentCtrl.searchService.searchFieldsService;
+
+      if (searchFields.advancedSearch){
+        searchFields.searchParams.query.forEach(function(t){
+          //each element in the query array will be a string structured like: 'field,operator,actual terms,BOOL'
+          //e.g. 'any,contains,killer whales,AND'
+          //strip everything out except the actual terms:
+          terms += t.replace(/^[^,]+,[^,]+,/, '').replace(/,[^,]+$/, '') + ' ';
+        });
+        terms = terms.replace(/\s+/, ' ').replace(/^\s+|\s+$/, '');
+      }
+      else{
+        terms = searchFields.mainSearch;
+      }
+
+      //worldcat
+      angular.element(
+        document.getElementById('searchWorldCat')
+      ).attr('href', 'https://www.worldcat.org/search?q=' + encodeURIComponent(terms));
+
+      //google scholar
+      angular.element(
+        document.getElementById('searchGoogleScholar')
+      ).attr('href', 'https://scholar.google.ca/scholar?q=' + encodeURIComponent(terms) + '&inst=' + (gsInstIds[window.appConfig.vid] || ''));
+    };
+  }]);
   
   //alternate, clickable version of the institution logo.
   // see also: the css rules regarding prm-logo.
