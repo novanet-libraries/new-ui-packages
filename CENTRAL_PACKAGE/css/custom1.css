@@ -416,3 +416,4 @@ prm-advanced-search .uppercase { font-weight: bold; }
 
 /* adding the 'search elsewhere' box removes the need for this spacer */
 prm-search-result-list .list-spacer { height: 10px ; min-height: 10px; }
+prm-search-result-list .spacer-replacer { min-height: 200px; }
