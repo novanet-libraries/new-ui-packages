@@ -30,6 +30,11 @@
       USA:   '4402118154602451548'
     };
 
+    $scope.isSearchDone = function(){
+      //return !vm.parentCtrl.searchInProgress;
+      return vm.parentCtrl.resultsExists;
+    };
+    
     vm.$onInit = function(){
       var terms = '', searchFields = vm.parentCtrl.searchService.searchFieldsService;
 
