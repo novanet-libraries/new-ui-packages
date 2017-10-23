@@ -3,9 +3,6 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
-//  app.component('prmSpinnerAfter', {
-//    template: '<strong>SPINNER-AFTER</strong>'
-//  });
   app.component('prmAccountOverviewAfter', {
     templateUrl: 'custom/CENTRAL_PACKAGE/html/seasonal-notice.html'
   }).controller('SeasonalNoticeController', function(){
