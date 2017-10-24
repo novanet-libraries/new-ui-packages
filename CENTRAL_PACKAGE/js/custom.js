@@ -8,7 +8,7 @@
 //  });
   app.component('prmAccountOverviewAfter', {
     templateUrl: function(){
-      var lang = location.search.match(/fr_FR/) ? 'fr_FR' : 'en_US';
+      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
       return 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html'; 
     }
   }).controller('SeasonalNoticeController', function(){
