@@ -1,0 +1,24 @@
+<md-card class="default-card" ng-show="isSearchDone();">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Not finding what you are looking for?<span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+      <p>
+        <span>For books,</span>
+        <a id="searchWorldCat" target="_blank" href="https://www.worldcat.org?q=">try your search in WorldCat</a>
+      </p>
+      <p>
+        <span>For articles,<span>
+        <a id="searchGoogleScholar" target="_blank" href="https://scholar.google.ca/scholar?q=">try your search in Google Scholar</a>
+      </p>
+      <!--
+        <p>
+          Maybe add some general search tips here, like on the zero-results page.
+        </p>
+      -->
+  </md-card-content>
+</md-card>
+<!-- we set the height of a "spacer" div to something small; this replaces that right after this <md-card> -->
+<div class="spacer-replacer">&nbsp;</div>
