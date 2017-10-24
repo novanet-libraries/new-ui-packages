@@ -7,7 +7,10 @@
 //    template: '<strong>SPINNER-AFTER</strong>'
 //  });
   app.component('prmAccountOverviewAfter', {
-    templateUrl: 'custom/CENTRAL_PACKAGE/html/seasonal-notice.html'
+    templateUrl: function(){
+      var lang = location.search.match(/fr_FR/) ? 'fr_FR' : 'en_US';
+      return 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html'; 
+    }
   }).controller('SeasonalNoticeController', function(){
     //do show/hide ??
   });
