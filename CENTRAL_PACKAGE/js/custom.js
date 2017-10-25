@@ -3,9 +3,14 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
-//  app.component('prmSpinnerAfter', {
-//    template: '<strong>SPINNER-AFTER</strong>'
-//  });
+  app.component('prmAccountOverviewAfter', {
+    templateUrl: function(){
+      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      return 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html'; 
+    }
+  }).controller('SeasonalNoticeController', function(){
+    //do show/hide ??
+  });
 
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
