@@ -21,19 +21,33 @@
     templateUrl: 'custom/CENTRAL_PACKAGE/html/search-elsewhere.html'
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
-    var vm = this, gsInstIds = {
-      ACAD:  '4382908539753259136',
-      AST:   '4414605408550952312',
-      CBU:   '9331274502214916509',
-      DAL:   '5975043576360107395',
-      KINGS: '5975043576360107395', //using Dal's
-      MSVU:  '17224971713671833064',
-      NSCC:  '6441348662430423134',
-      NSCAD: '12584370207272605175',
-      SMU:   '231651475990452367',
-      STFX:  '8335306489616302259',
-      USA:   '4402118154602451548'
-    };
+    var vm = this,
+        //this data belongs in the library info service, not here.
+        gsInstIds = {
+          ACAD:  '4382908539753259136',
+          AST:   '4414605408550952312',
+          CBU:   '9331274502214916509',
+          DAL:   '5975043576360107395',
+          KINGS: '5975043576360107395', //using Dal's
+          MSVU:  '17224971713671833064',
+          NSCC:  '6441348662430423134',
+          NSCAD: '12584370207272605175',
+          SMU:   '231651475990452367',
+          STFX:  '8335306489616302259',
+          USA:   '4402118154602451548'
+        },
+        worldCatUrls = {
+          DEFAULT: 'https://www.worldcat.org/search?q=',
+          ACAD:    'https://acadiau.on.worldcat.org/search?queryString=',
+          AST:     'https://ast.on.worldcat.org/search?queryString=',
+          CBU:     'https://cbu.on.worldcat.org/search?queryString=',
+          DAL:     'https://dal.on.worldcat.org/search?queryString=',
+          NSCC:    'https://nscc.on.worldcat.org/search?queryString=',
+          NSCAD:   'https://nscad.on.worldcat.org/search?queryString=',
+          MSVU:    'https://msvu.on.worldcat.org/search?queryString=',
+          SMU:     'https://smu.on.worldcat.org/search?queryString=',
+          STFX:    'https://stfx.on.worldcat.org/search?queryString='
+        };
 
     $scope.isSearchDone = function(){
       //return !vm.parentCtrl.searchInProgress;
@@ -59,7 +73,7 @@
       //worldcat
       angular.element(
         document.getElementById('searchWorldCat')
-      ).attr('href', 'https://www.worldcat.org/search?q=' + encodeURIComponent(terms));
+      ).attr('href', (worldCatUrls[window.appConfig.vid] || worldCatUrls.DEFAULT) + encodeURIComponent(terms));
 
       //google scholar
       angular.element(
