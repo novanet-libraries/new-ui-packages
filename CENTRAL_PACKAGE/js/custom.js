@@ -18,7 +18,10 @@
     bindings: {
       'parentCtrl': '<'
     },
-    templateUrl: 'custom/CENTRAL_PACKAGE/html/search-elsewhere.html'
+    templateUrl: function(){
+      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      return 'custom/CENTRAL_PACKAGE/html/search-elsewhere-' + lang + '.html'; 
+    }
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
     var vm = this,
