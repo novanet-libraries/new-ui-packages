@@ -3,7 +3,6 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
-/*
   app.component('prmAccountOverviewAfter', {
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
@@ -12,7 +11,6 @@
   }).controller('SeasonalNoticeController', function(){
     //do show/hide ??
   });
-*/
 
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
