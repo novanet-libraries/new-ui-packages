@@ -3,15 +3,17 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
-  app.component('prmAccountOverviewAfter', {
+  app.component('seasonalNoticeCard', {
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
       return 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html'; 
     }
-  }).controller('SeasonalNoticeController', function(){
-    //do show/hide ??
   });
-
+  
+  app.component('prmAccountOverviewAfter', {
+    template: '<seasonal-notice-card></seasonal-notice-card>'
+  });
+  
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
     controller: 'SearchElsewhereController',
