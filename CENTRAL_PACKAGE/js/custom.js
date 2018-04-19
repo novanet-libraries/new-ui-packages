@@ -328,10 +328,10 @@
   //define a <live-help-card> component that draws an <md-card> with "Ask a Librarian" in it.
   //the controller pulls in the requisite LibraryH3lp code to make it work.
   app.component('liveHelpCard', {
-    controller: 'LiveHelpController2',
+    controller: 'LiveHelpController',
     templateUrl: 'custom/CENTRAL_PACKAGE/html/live-help-card.html'
   })
-  .controller('LiveHelpController2', ['$scope', 'angularLoad', function($scope, angularLoad){
+  .controller('LiveHelpController', ['$scope', 'angularLoad', function($scope, angularLoad){
     var ctrl       = this,
         chatWindow = null,
         chatUrl    = (function(){
