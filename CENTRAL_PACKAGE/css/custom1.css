@@ -274,10 +274,14 @@ mark {
 .section-title-header,
 .sidebar-header {
   font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 21px;
-  color: #cc9235;
+  color: #3a3a3a;
 }
+.section-title prm-icon {
+  color: #3a3a3a;
+}
+
 prm-brief-result .item-title,
 prm-brief-result .item-title span {
   color: #2b6691;
@@ -309,7 +313,6 @@ prm-action-list md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-
   }
 }
 
-.section-title prm-icon,
 .result-item-actions .custom-button.pin-button,
 prm-add-query-to-saved-searches .custom-button.pin-button,
 prm-recomendation-item .media-on-hover .pin-button,
