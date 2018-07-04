@@ -348,18 +348,21 @@ a:hover {
   color: #2b6691;
 }
 
-/* live help button / menu */
+/* live help widget */
 #novanet-live-help {
-  display: none;
+  transform: rotate(-90deg);
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  right: -1em;
+  font-size:larger;
+  font-weight:bold;
+  padding:0.5em;
+  top: 55%;
   z-index: 1000;
-}
-#novanet-live-help button,
-#novanet-live-help a {
+  border:2px solid white;
+  border-radius: 0.2em;
   background-color: #0075b0;  
-  color: white;
+  color:white;
+  box-shadow:0px 0px 2px 2px #0075b0;
 }
 #novanet-live-help svg {
   color: white;

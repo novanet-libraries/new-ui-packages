@@ -13,6 +13,9 @@
   app.component('prmAccountOverviewAfter', {
     template: '<seasonal-notice-card></seasonal-notice-card>'
   });
+  app.component('prmTopbarAfter', {
+    template: '<live-help-widget></live-help-widget>'
+  });
   
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
@@ -327,9 +330,14 @@
 
   //define a <live-help-card> component that draws an <md-card> with "Ask a Librarian" in it.
   //the controller pulls in the requisite LibraryH3lp code to make it work.
+  //also define a <live-help-widget> that uses the same controller
   app.component('liveHelpCard', {
     controller: 'LiveHelpController',
     templateUrl: 'custom/CENTRAL_PACKAGE/html/live-help-card.html'
+  })
+  .component('liveHelpWidget', {
+    controller: 'LiveHelpController',
+    templateUrl: 'custom/CENTRAL_PACKAGE/html/live-help-widget.html'
   })
   .controller('LiveHelpController', ['$scope', 'angularLoad', function($scope, angularLoad){
     var ctrl       = this,
