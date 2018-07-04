@@ -5,14 +5,25 @@
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
+
+    <!-- the JS from libraryh3lp.com will remove the display:none style if someone is online, accepting chat requests. -->
     <div jid="novanet@chat.libraryh3lp.com" class="libraryh3lp" style="display:none">
       <p><a href ng-click="showChat($event);">Ask a librarian</a> how to start your search.</p>
     </div>
+
+    <!-- the JS from libraryh3lp.com will remove the display:none style when there is no-one online. -->
     <div class="libraryh3lp" style="display:none">
       <p><a href ng-click="sayOffline($event);">Ask a librarian</a> how to start your search.</p>
-      <p><md-icon md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.</p>
+      <p><md-icon class="md-warn" md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.</p>
     </div>
-    
+
+    <div style="margin-top:3em">
+      <header><strong>Hours of Operation</strong></header>
+      <div layout="row">
+        LiveHelp will resume in September.
+      </div>
+    </div>
+    <!--
     <div style="margin-top:3em">
       <header><strong>Hours of Operation</strong></header>
       <div layout="row">
@@ -23,6 +34,8 @@
       <header><strong>No Service</strong></header>
       <div layout="row" title="Victoria Day">May 21, 2018</div>
     </div>
+    -->
+    
     
   </md-card-content>
 </md-card>
