@@ -363,7 +363,7 @@
       });
     };
 
-    $scope.liveHelpText = "Ask A Librarian!";
+    $scope.liveHelpText = "Ask Us!";
 
     $scope.showChat = function(evt){
       evt && evt.stopPropagation();
