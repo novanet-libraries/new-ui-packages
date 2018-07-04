@@ -368,7 +368,7 @@ a:hover {
   color: white;
   fill: white;
 }
-#novanet-live-help .md-warn svg {
+.md-warn svg {
   color: tomato;
   fill: tomato;
 }
