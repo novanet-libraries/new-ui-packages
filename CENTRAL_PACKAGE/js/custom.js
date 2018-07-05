@@ -272,6 +272,7 @@
     };
   });//end libraryFacet definition
 
+/*
   //add DocDel button to Actions list
   app.component('prmActionListAfter', {
     require: {
@@ -291,7 +292,7 @@
           idx = Object.keys(actionCtrl.actionListService.actionsToIndex).length -1,
           name = 'RELAIS';
 
-      /* no DocDel action configured for this item -- return. */
+      //no DocDel action configured for this item -- return.
       if (!actionCtrl.item.link.docdelurl){
         return;
       }
@@ -327,6 +328,7 @@
 
     };
   });
+*/
 
   //define a <live-help-card> component that draws an <md-card> with "Ask a Librarian" in it.
   //the controller pulls in the requisite LibraryH3lp code to make it work.
