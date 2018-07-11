@@ -373,7 +373,7 @@
       });
     };
 
-    $scope.liveHelpText = "Ask Us!";
+    $scope.liveHelpText = "Live Help";
 
     $scope.showChat = function(evt){
       evt && evt.stopPropagation();
