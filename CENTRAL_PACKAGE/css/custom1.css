@@ -350,9 +350,9 @@ a:hover {
 
 /* live help widget */
 #novanet-live-help {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
   position: fixed;
-  right: -1em;
+  right: -1.5em;
   font-size:larger;
   font-weight:bold;
   padding:0.5em;
