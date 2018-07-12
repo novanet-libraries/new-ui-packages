@@ -192,23 +192,7 @@
   })
   .controller('FacetCustomizationsController', ['libraryFacetService', '$element', function(libraryFacetService, $element){
 
-    var vm = this,
-      //some utilities for forcing the Library facet sort-order.  (maybe these can be moved to the libraryFacetService?)
-      preferredLibs = libraryFacetService.preferredLibsByView(window.appConfig.vid),
-      isPreferred = function(lib){ return preferredLibs.indexOf(lib) >= 0; },
-      libCompare = function(a,b){
-        var a = a.value, b = b.value; //this function receives objects; get their string values
-
-        if (isPreferred(a)){
-          //a is preferred.  If b is also preferred, compare them, otherwise, a comes first (-1).
-          return isPreferred(b) ? libraryFacetService.libStringCompare(a,b) : -1;
-        }
-        else{
-          //a is not preferred.  If b is preferred, b comes first (1), otherwise, compare them.
-          return isPreferred(b) ? 1 : libraryFacetService.libStringCompare(a,b);
-        }
-      };
-
+    var vm = this;
 
     vm.$onInit = function(){
       var facetGroup = vm.parentCtrl.facetGroup,
@@ -266,29 +250,49 @@
       'SMU'   : ['SMU'],
       'STFX'  : ['STFX', 'SFXMD', 'SFXCO', 'SFCRC'],
       'USA'   : ['USA']
+    },
+
+    //libraries to hoist to the top for the current view
+    preferredLibs = libsByView[window.appConfig.vid] || [],
+
+    //utility funtions
+    isPreferred = function(lib){
+      return preferredLibs.indexOf(lib) >= 0;
+    },
+    //straight compare of the string values
+    libStringCompare = function(a,b){
+      var aIdx = libSortOrder.indexOf(a),
+          bIdx = libSortOrder.indexOf(b);
+
+      //if either of these warnings appear in the console, then sort order is undefined.
+      if (aIdx < 0){
+        console.warn("libStringCompare() encountered unknown library code: '%s'", a);
+      }
+      if (bIdx < 0){
+        console.warn("libStringCompare() encountered unknown library code: '%s'", b);
+      }
+
+      return aIdx - bIdx;
     };
 
     return {
-      preferredLibsByView: function(viewCode){
-        viewCode = viewCode || '';
-        return libsByView[viewCode] || [];  //make sure returned value is always an Array
-      },
-      libStringCompare: function(a,b){
-        var aIdx = libSortOrder.indexOf(a),
-            bIdx = libSortOrder.indexOf(b);
+      //compare that takes into account hoisting preferred libs,
+      //then uses the straight compare function libCompareStrings() to sort within the two groups (preferred and not preferred)
+      libCompare: function(a,b){
+        a = a.value;
+        b = b.value; //this function receives objects; get their string values
 
-        //if either of these warnings appear in the console, then sort order is undefined.
-        if (aIdx < 0){
-          console.warn("libStringCompare() encountered unknown library code: '%s'", a);
+        if (isPreferred(a)){
+          //a is preferred.  If b is also preferred, compare them, otherwise, a comes first (-1).
+          return isPreferred(b) ? libStringCompare(a,b) : -1;
         }
-        if (bIdx < 0){
-          console.warn("libStringCompare() encountered unknown library code: '%s'", b);
+        else{
+          //a is not preferred.  If b is preferred, b comes first (1), otherwise, compare them.
+          return isPreferred(b) ? 1 : libStringCompare(a,b);
         }
-
-        return aIdx - bIdx;
       }
     };
-  });//end libraryFacet definition
+  });//end libraryFacetService definition
 
 /*
   //add DocDel button to Actions list
