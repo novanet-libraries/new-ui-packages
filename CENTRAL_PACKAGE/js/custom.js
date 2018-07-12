@@ -6,17 +6,17 @@
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
-      return window.appConfig.vid == 'AST' ? '' : 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html'; 
+      return window.appConfig.vid == 'AST' ? '' : 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html';
     }
   });
-  
+
   app.component('prmAccountOverviewAfter', {
     template: '<seasonal-notice-card></seasonal-notice-card>'
   });
   app.component('prmTopbarAfter', {
     template: '<live-help-widget></live-help-widget>'
   });
-  
+
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
     controller: 'SearchElsewhereController',
@@ -25,7 +25,7 @@
     },
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
-      return 'custom/CENTRAL_PACKAGE/html/search-elsewhere-' + lang + '.html'; 
+      return 'custom/CENTRAL_PACKAGE/html/search-elsewhere-' + lang + '.html';
     }
   })
   .controller('SearchElsewhereController', ['$scope', function($scope){
@@ -61,7 +61,7 @@
       //return !vm.parentCtrl.searchInProgress;
       return vm.parentCtrl.resultsExists;
     };
-    
+
     vm.$onInit = function(){
       var terms = '', searchFields = vm.parentCtrl.searchService.searchFieldsService;
 
@@ -89,7 +89,7 @@
       ).attr('href', 'https://scholar.google.ca/scholar?q=' + encodeURIComponent(terms) + '&inst=' + (gsInstIds[window.appConfig.vid] || ''));
     };
   }]);
-  
+
   //alternate, clickable version of the institution logo.
   // see also: the css rules regarding prm-logo.
   app.component('prmLogoAfter', {
@@ -331,7 +331,7 @@
       }
 
       console.log(actionCtrl);
-      
+
       actionCtrl.onToggle[name] = function(){
         var rec_id = actionCtrl.item.pnx.control.recordid;
         if (vm.windowRef[rec_id] && !vm.windowRef[rec_id].closed){
