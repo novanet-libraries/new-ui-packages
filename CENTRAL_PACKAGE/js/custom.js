@@ -184,9 +184,6 @@
     };
   });
 
-  //Apply custom sort to the Library facet
-  //Our sort order is arbitrary (almost alphabetical, but not really),
-  //with libraries of the view hoisted to the top of the list.
   app.component('prmFacetExactAfter', {
     controller: 'FacetCustomizationsController',
     bindings: {
@@ -196,6 +193,7 @@
   .controller('FacetCustomizationsController', ['libraryFacetService', '$element', function(libraryFacetService, $element){
 
     var vm = this,
+      //some utilities for forcing the Library facet sort-order.  (maybe these can be moved to the libraryFacetService?)
       preferredLibs = libraryFacetService.preferredLibsByView(window.appConfig.vid),
       isPreferred = function(lib){ return preferredLibs.indexOf(lib) >= 0; },
       libCompare = function(a,b){
@@ -216,6 +214,9 @@
       var facetGroup = vm.parentCtrl.facetGroup,
           state      = vm.parentCtrl.$state;
 
+      //Apply custom sort to the Library facet
+      //Our sort order is arbitrary (almost alphabetical, but not really),
+      //with libraries of the view hoisted to the top of the list.
       try{
         if (facetGroup.name == "library" && angular.isArray(facetGroup.values)){
           facetGroup.values.sort(libCompare);
