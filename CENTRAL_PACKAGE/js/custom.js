@@ -401,18 +401,28 @@
     $scope.liveHelpText = "Live Help";
 
     $scope.showChat = function(evt){
-      evt && evt.stopPropagation();
+      try{
+        evt.stopPropagation();
 
-      if (chatWindow && !chatWindow.closed){
-        chatWindow.focus();
+        if (chatWindow && !chatWindow.closed){
+          chatWindow.focus();
+        }
+        else{
+          chatWindow = window.open(chatUrl, 'Live Help', 'resizable=1,width=300,height=300,top:100,left:100');
+        }
       }
-      else{
-        chatWindow = window.open(chatUrl, 'Live Help', 'resizable=1,width=300,height=300,top:100,left:100');
+      catch(e){
+        console.warn(e);
       }
     };
     $scope.sayOffline = function(evt){
-      evt && evt.stopPropagation();
-      alert("Offline");
+      try{
+        evt.stopPropagation();
+        alert("Offline");
+      }
+      catch(e){
+        console.warn(e);
+      }
     };
 
   }]); //end definition of LiveHelpController
