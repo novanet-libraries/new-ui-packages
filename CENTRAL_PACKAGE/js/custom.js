@@ -193,7 +193,7 @@
       'parentCtrl': '='
     }
   })
-  .controller('LibraryFacetController', ['libraryFacetService', function(libraryFacetService){
+  .controller('LibraryFacetController', ['libraryFacetService', '$element', function(libraryFacetService, $element){
 
     var vm = this,
       preferredLibs = libraryFacetService.preferredLibsByView(window.appConfig.vid),
@@ -213,11 +213,21 @@
 
 
     vm.$onInit = function(){
-      var facetGroup = vm.parentCtrl.facetGroup;
+      var facetGroup = vm.parentCtrl.facetGroup,
+          state      = vm.parentCtrl.$state;
 
       if (facetGroup && facetGroup.name == "library" && angular.isArray(facetGroup.values)){
         facetGroup.values.sort(libCompare);
       }
+
+      try{      
+        if (facetGroup.name == "tlevel" && state.params.search_scope.match(/_CR$/)){
+          $element.parent().parent().parent().css("display", "none");
+        }
+      }catch(e){
+        console.warn(e);
+      }
+
     };
 
   }])
