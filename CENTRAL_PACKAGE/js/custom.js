@@ -222,9 +222,10 @@
 
     };
 
-  }])
-  .factory('libraryFacetService', function(){
-    //provides functions for sorting the Library facet correctly.
+  }]);
+
+   //libraryFacetService provides a libCompare() function for sorting the Library facet correctly.
+  app.factory('libraryFacetService', function(){
 
     //define the preferred sort order of all the facet options
     //N.B. every possible value that could appear in the facet group must be in this list.
