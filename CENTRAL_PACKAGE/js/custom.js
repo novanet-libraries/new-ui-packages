@@ -98,9 +98,8 @@
     bindings    : {
       'parentCtrl': '='
     }
-  }).controller('LogoController', ['$scope', '$http', 'logoInfoService', function($scope, $http, logoInfoService){
-    var ctrl = this,
-        vid  = window.appConfig.vid || 'NOVANET',
+  }).controller('LogoController', ['$scope', 'logoInfoService', function($scope, logoInfoService){
+    var vid  = window.appConfig.vid || 'NOVANET',
         info = logoInfoService[vid] || {},
         svgUrl = "custom/"+vid+"/img/library-logo.svg",
         pngUrl = "custom/"+vid+"/img/library-logo.png";
