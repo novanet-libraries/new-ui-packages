@@ -201,6 +201,7 @@
       //Apply custom sort to the Library facet
       //Our sort order is arbitrary (almost alphabetical, but not really),
       //with libraries of the view hoisted to the top of the list.
+      //all of that logic is in the libraryFacetService::libCompare() function
       try{
         if (facetGroup.name.substr(0,7) == "library" && angular.isArray(facetGroup.values)){
           facetGroup.values.sort(libraryFacetService.libCompare);
@@ -211,7 +212,7 @@
 
       //we don't want the Availability section when we are in Course Reserves.
       //hide the facet <div> that contains this <prm-facet-exact-after> directive.
-      //if the UI HTML changes, this may have to change as well.
+      //if the UI HTML changes, this may have to change as well (e.g. the number of calls to parent())
       try{
         if (facetGroup.name == "tlevel" && state.params.search_scope.substr(-3) == "_CR"){
           $element.parent().parent().parent().css("display", "none");
@@ -224,7 +225,7 @@
 
   }]);
 
-   //libraryFacetService provides a libCompare() function for sorting the Library facet correctly.
+  //libraryFacetService provides a libCompare() function for sorting the Library facet correctly.
   app.factory('libraryFacetService', function(){
 
     //define the preferred sort order of all the facet options
@@ -260,6 +261,7 @@
     isPreferred = function(lib){
       return preferredLibs.indexOf(lib) >= 0;
     },
+    
     //straight compare of the string values
     libStringCompare = function(a,b){
       var aIdx = libSortOrder.indexOf(a),
@@ -277,8 +279,9 @@
     };
 
     return {
-      //compare that takes into account hoisting preferred libs,
-      //then uses the straight compare function libCompareStrings() to sort within the two groups (preferred and not preferred)
+      //the actual compare function that takes into account hoisting preferred libs,
+      //then uses the straight compare function libCompareStrings() to sort within those
+      //two groups (preferred and not preferred)
       libCompare: function(a,b){
         a = a.value;
         b = b.value; //this function receives objects; get their string values
