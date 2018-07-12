@@ -248,8 +248,8 @@
       'NOVA', 'WWW', 'ACAD', 'AST', 'CBU',
       'DAL', 'DLNET', 'DNET', 'DLWKK', 'DLKIL', 'DLLAW', 'DLAGR', 'DLSXT',
       'MSVU', 'MSCBC', 'MSCRC', 'NSCAD',
-      'NSCC', 'CCNET', 'CNET', 'CCAK', 'CCAV', 'CCBC', 'CCCU', 'CCIT', 'CCKC',
-      'CCLC', 'CCMC', 'CCPC', 'CCSC', 'CCSA', 'CCTR', 'CCWC',
+      'NSCC', 'CCNET', 'CNET', 'CCAK', 'CCAV', 'CCBC', 'CCCU', 'CCIT', 'CCWC',
+      'CCKC', 'CCLC', 'CCMC', 'CCPC', 'CCSC', 'CCSA', 'CCTR',
       'STFX', 'SFXMD', 'SFXCO', 'SFCRC', 'SMU', 'USA', 'KINGS'],
 
     //libraries to hoist to the top when we are in any particular view
