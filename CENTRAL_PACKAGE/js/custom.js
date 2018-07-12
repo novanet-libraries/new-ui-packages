@@ -225,10 +225,10 @@
       }
 
       try{      
-        if (facetGroup.name == "tlevel" && state.params.search_scope.match(/_CR$/)){
           //we don't want the Availability section when we are in Course Reserves.
           //hide the facet <div> that contains this <prm-facet-exact-after> directive.
           //if the UI HTML changes, this may have to change as well.
+        if (facetGroup.name == "tlevel" && state.params.search_scope.substr(-3) == "_CR"){
           $element.parent().parent().parent().css("display", "none");
         }
       }catch(e){
