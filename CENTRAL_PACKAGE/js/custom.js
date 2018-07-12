@@ -216,8 +216,12 @@
       var facetGroup = vm.parentCtrl.facetGroup,
           state      = vm.parentCtrl.$state;
 
-      if (facetGroup && facetGroup.name == "library" && angular.isArray(facetGroup.values)){
-        facetGroup.values.sort(libCompare);
+      try{
+        if (facetGroup.name == "library" && angular.isArray(facetGroup.values)){
+          facetGroup.values.sort(libCompare);
+        }
+      }catch(e){
+        console.warn(e);
       }
 
       try{      
