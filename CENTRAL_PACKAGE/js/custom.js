@@ -188,12 +188,12 @@
   //Our sort order is arbitrary (almost alphabetical, but not really),
   //with libraries of the view hoisted to the top of the list.
   app.component('prmFacetExactAfter', {
-    controller: 'LibraryFacetController',
+    controller: 'FacetCustomizationsController',
     bindings: {
       'parentCtrl': '='
     }
   })
-  .controller('LibraryFacetController', ['libraryFacetService', '$element', function(libraryFacetService, $element){
+  .controller('FacetCustomizationsController', ['libraryFacetService', '$element', function(libraryFacetService, $element){
 
     var vm = this,
       preferredLibs = libraryFacetService.preferredLibsByView(window.appConfig.vid),
