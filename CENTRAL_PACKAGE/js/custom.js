@@ -218,8 +218,8 @@
       //Our sort order is arbitrary (almost alphabetical, but not really),
       //with libraries of the view hoisted to the top of the list.
       try{
-        if (facetGroup.name == "library" && angular.isArray(facetGroup.values)){
-          facetGroup.values.sort(libCompare);
+        if (facetGroup.name.substr(0,7) == "library" && angular.isArray(facetGroup.values)){
+          facetGroup.values.sort(libraryFacetService.libCompare);
         }
       }catch(e){
         console.warn(e);
