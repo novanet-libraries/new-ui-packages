@@ -213,7 +213,9 @@
       //hide the facet <div> that contains this <prm-facet-exact-after> directive.
       //if the UI HTML changes, this may have to change as well (e.g. the number of calls to parent())
       try{
-        if (facetGroup.name == "tlevel" && state.params.search_scope.substr(-3) == "_CR"){
+        if (facetGroup.name == "tlevel" &&
+            (state.params.search_scope == "course_reserves" || state.params.search_scope.substr(-3) == "_CR")
+           ){
           $element.parent().parent().parent().css("display", "none");
         }
       }catch(e){
