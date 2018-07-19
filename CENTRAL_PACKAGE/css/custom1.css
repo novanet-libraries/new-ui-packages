@@ -423,3 +423,36 @@ prm-advanced-search .uppercase { font-weight: bold; }
 /* adding the 'search elsewhere' box removes the need for this spacer */
 prm-search-result-list .list-spacer { height: 10px ; min-height: 10px; }
 prm-search-result-list .spacer-replacer { min-height: 200px; }
+
+
+/**** Full Display ****/
+
+/* remove the side navbar for sections */
+prm-full-view .services-index-under #services-index {
+   display: none;
+}
+.__gt-xs .full-view-section-content {
+  padding-left: 0;
+}
+
+/* define the sections with colors and spacing */
+.full-view-container,
+.full-view-inner-container{
+  background-color:#F5DEB3;
+}
+.full-view-section {
+  padding: 0;
+}
+prm-full-view-service-container {
+  display: block;
+  border-radius: 8px;
+  background-color: #F6EDDE;
+  padding: 10px;
+}
+prm-service-header {
+  color: black;
+  font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
+}
+prm-service-header md-divider.md-primoExplore-theme {
+  color: black;
+}
