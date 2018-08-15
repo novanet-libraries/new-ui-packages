@@ -438,7 +438,8 @@ prm-full-view .services-index-under #services-index {
 /* define the sections with colors and spacing */
 .full-view-container,
 .full-view-inner-container{
-  background-color:#F5DEB3;
+  background-color:#dcdcdc;
+/*  background-color:#F5DEB3; */
 }
 .full-view-section {
   padding: 0;
@@ -446,7 +447,8 @@ prm-full-view .services-index-under #services-index {
 prm-full-view-service-container {
   display: block;
   border-radius: 8px;
-  background-color: #F6EDDE;
+  background-color: #e9e9e9;
+/*  background-color: #F6EDDE; */
   padding: 10px;
 }
 prm-service-header {
