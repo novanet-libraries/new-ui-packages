@@ -3,6 +3,25 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
+  app.component('prmServiceButtonAfter', {
+    bindings: {
+      parentCtrl: '='
+    },
+    controller: function(){
+      var ctrl = this.parentCtrl;
+      //disallow item level holds
+      //(that is, services with type HoldRequest that specify an itemid)
+      try{
+        if (ctrl.service.type == 'HoldRequest' && ctrl.requestParameters.itemid){
+          ctrl.service.allowed = false;
+        }
+      }catch (e){
+        console.error("Error occured in custom.js, prmServiceButtonAfter controller function.");
+        console.error(e);
+      }
+    }
+  });
+  
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
