@@ -21,7 +21,28 @@
       }
     }
   });
-  
+
+  //Hide virtual browse if callnumber is "Electronic Book" (or similar)
+  //browse works on callnumber to show similar items; that doesn't work with these callnumbers.
+  app.component('prmVirtualBrowseAfter', {
+    bindings: {
+      parentCtrl: '<'
+    },
+    controller: function (){
+      var cn;
+      try{
+        cn = this.parentCtrl.item.enrichment.virtualBrowseObject.callNumber;
+        if (cn.toLowerCase().substring(0,10) == 'electronic'){
+          console.log("removing virtualbrowse section because callnumber is: " + cn);
+          angular.element(document.getElementById('virtualBrowse')).remove();
+        }
+      }catch(e){
+        console.error("Error occured in custom.js, prmVirtualBrowseAfter controller function.");
+        console.error(e);
+      }
+    }
+  });
+
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
