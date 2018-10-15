@@ -34,7 +34,7 @@
         cn = this.parentCtrl.item.enrichment.virtualBrowseObject.callNumber;
         if (cn.toLowerCase().substring(0,10) == 'electronic'){
           console.log("removing virtualbrowse section because callnumber is: " + cn);
-          angular.element(document.getElementById('virtualBrowse')).remove();
+          this.parentCtrl.item.enrichment.virtualBrowseObject.isVirtualBrowseEnabled = false;
         }
       }catch(e){
         console.error("Error occured in custom.js, prmVirtualBrowseAfter controller function.");
