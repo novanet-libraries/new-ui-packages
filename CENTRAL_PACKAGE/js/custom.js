@@ -24,7 +24,7 @@
 
   //Hide virtual browse if callnumber is "Electronic Book" (or similar)
   //browse works on callnumber to show similar items; that doesn't work with these callnumbers.
-  app.component('prmVirtualBrowseAfter', {
+  app.component('prmFullViewAfter', {
     bindings: {
       parentCtrl: '<'
     },
@@ -34,7 +34,7 @@
         cn = this.parentCtrl.item.enrichment.virtualBrowseObject.callNumber;
         if (cn.toLowerCase().substring(0,10) == 'electronic'){
           console.log("removing virtualbrowse section because callnumber is: " + cn);
-          angular.element(document.getElementById('virtualBrowse')).remove();
+          this.parentCtrl.item.enrichment.virtualBrowseObject.isVirtualBrowseEnabled = false;
         }
       }catch(e){
         console.error("Error occured in custom.js, prmVirtualBrowseAfter controller function.");
@@ -193,7 +193,7 @@
         width: "188"
       },
       NSCAD:{
-        href: "http://nscad.ca/en/home/library/default.aspx",
+        href: "https://nscad.ca/research/library/",
         alt: "NSCAD Library",
         width: "122",
         usePng: true
