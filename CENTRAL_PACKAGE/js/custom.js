@@ -193,7 +193,7 @@
         width: "188"
       },
       NSCAD:{
-        href: "http://nscad.ca/en/home/library/default.aspx",
+        href: "https://nscad.ca/research/library/",
         alt: "NSCAD Library",
         width: "122",
         usePng: true
