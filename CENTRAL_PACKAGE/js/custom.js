@@ -24,7 +24,7 @@
 
   //Hide virtual browse if callnumber is "Electronic Book" (or similar)
   //browse works on callnumber to show similar items; that doesn't work with these callnumbers.
-  app.component('prmVirtualBrowseAfter', {
+  app.component('prmFullViewAfter', {
     bindings: {
       parentCtrl: '<'
     },
