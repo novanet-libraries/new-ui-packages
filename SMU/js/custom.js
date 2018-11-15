@@ -4,8 +4,8 @@
   var app = angular.module('viewCustom', ['angularLoad']);
 
   window.browzine = {
-    libraryId: "SMU",
-    apiKey: "ENTER API KEY",
+    libraryId:  "SMU",
+    apiKey:     "ENTER API KEY",
  
     journalCoverImagesEnabled: true,
  
@@ -17,7 +17,7 @@
  
     articlePDFDownloadLinkEnabled: true,
     articlePDFDownloadLinkText: "Download PDF",
- 
+
     printRecordsIntegrationEnabled: true,
   };
  
@@ -25,13 +25,13 @@
   browzine.script.src = "https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js";
   document.head.appendChild(browzine.script);
  
-  app.controller('prmSearchResultAvailabilityLineAfterController', function($scope) {
+  app.controller('BrowzineAfterAvailabilityController', function($scope) {
     window.browzine.primo.searchResult($scope);
   });
  
   app.component('prmSearchResultAvailabilityLineAfter', {
     bindings: { parentCtrl: '<' },
-    controller: 'prmSearchResultAvailabilityLineAfterController'
+    controller: 'BrowzineAfterAvailabilityController'
   });
 
 })();
