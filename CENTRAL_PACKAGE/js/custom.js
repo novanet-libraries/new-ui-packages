@@ -423,7 +423,7 @@
           url += '&theme='    + encodeURIComponent(theme);
           url += '&title='    + encodeURIComponent(title);
           url += '&identity=' + encodeURIComponent(identity);
-          url += '&css='      + encodeURIComponent(css);
+//          url += '&css='      + encodeURIComponent(css);
           return url;
         })();
 
