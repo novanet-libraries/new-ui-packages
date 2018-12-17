@@ -12,7 +12,8 @@
       //disallow item level holds
       //(that is, services with type HoldRequest that specify an itemid)
       try{
-        if (ctrl.service.type == 'HoldRequest' && ctrl.requestParameters.itemid){
+        //temporary, disallow all holds for holiday break
+        if (ctrl.service.type == 'HoldRequest'){
           ctrl.service.allowed = false;
         }
       }catch (e){
