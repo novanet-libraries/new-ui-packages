@@ -4,8 +4,8 @@
   var app = angular.module('viewCustom', ['angularLoad']);
 
   window.browzine = {
-    libraryId:  "SMU",
-    apiKey:     "ENTER API KEY",
+    libraryId:  "1465",
+    apiKey:     "cd63e5c7-8877-41b6-bfbd-2e3bfb16003f",
 
     journalCoverImagesEnabled: true,
 
