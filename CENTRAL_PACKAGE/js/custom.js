@@ -349,7 +349,7 @@
     isPreferred = function(lib){
       return preferredLibs.indexOf(lib) >= 0;
     },
-    
+
     //straight compare of the string values
     libStringCompare = function(a,b){
       var aIdx = libSortOrder.indexOf(a),
