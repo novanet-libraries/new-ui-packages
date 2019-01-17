@@ -554,7 +554,7 @@
     };
 
     $http.get(
-      'https://aleph1.novanet.ca/cgi-bin/hours-data.pl?sublibrary=' + $scope.sublibraryString
+      'https://aleph1.novanet.ca/novanet/hours-data.pl?sublibrary=' + $scope.sublibraryString
     ).then(
       function(response){
         $scope.hours = response.data;
