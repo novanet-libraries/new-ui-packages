@@ -458,3 +458,24 @@ prm-service-header {
 prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
+
+
+/* novanet-library-hours custom directive */
+.novanet-library-hours header {
+  font-weight: bold;
+}
+.novanet-library-hours .times {
+  float: right;
+}
+.novanet-library-hours ul {
+  list-style-type: none;
+  margin: 1em;
+  padding: 0;
+}
+.novanet-library-hours li {
+  margin: 0;
+  padding: 0;
+}
+.novanet-library-hours .today {
+  margin: 0 1em 1em 1em;
+}
