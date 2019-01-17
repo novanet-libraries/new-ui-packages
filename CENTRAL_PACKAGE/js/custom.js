@@ -152,7 +152,7 @@
     vm.$onInit = function(){
       var terms = '', searchFields = vm.parentCtrl.searchService.searchFieldsService;
 
-      if (searchFields.advancedSearch){
+      if (angular.isArray(searchFields.searchParams.query)){
         searchFields.searchParams.query.forEach(function(t){
           //each element in the query array will be a string structured like: 'field,operator,actual terms,BOOL'
           //e.g. 'any,contains,killer whales,AND'
