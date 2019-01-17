@@ -516,7 +516,7 @@
 
   }]); //end definition of LiveHelpController
 
-/*
+
   //make a <novanet-library-hours> component, institutions can put it on the landing page (or anywhere, or nowhere)
   //to include it write something like: <novanet-library-hours sublibrary="DLKIL,DLAGR"></novanet-library-hours>
   app.component('novanetLibraryHours', {
@@ -637,6 +637,6 @@
       return output || input;
     };
   }); // end LibraryHours component definition.
-*/
+
 
 })();
