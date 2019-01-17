@@ -43,7 +43,7 @@ prm-logo img {
 }
 /*
 ** The logos will usually be wider now, so change the breakpoint at which the main menu
-** and user area collapse into the mobile menu button 
+** and user area collapse into the mobile menu button
 *
 @media (max-width: 959px) and (min-width: 720px){
   prm-topbar .hide-sm:not(.show-gt-xs):not(.show-sm):not(.show),
@@ -360,7 +360,7 @@ a:hover {
   z-index: 1000;
   border:2px solid white;
   border-radius: 0.2em;
-  background-color: #0075b0;  
+  background-color: #0075b0;
   color:white;
   box-shadow:0px 0px 2px 2px #0075b0;
 }
