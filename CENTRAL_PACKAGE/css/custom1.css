@@ -409,6 +409,8 @@ prm-account .tiles-grid {
   column-width: 24em;
 }
 
+/* hide button to cancel hold requests */
+button[aria-label="cancel request button"] { style:display:none; }
 
 /**** Advanced Search *****/
 /* bold the boolean operator drop-down */
