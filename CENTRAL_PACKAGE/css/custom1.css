@@ -460,3 +460,8 @@ prm-service-header {
 prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
+
+/* hide item level holds and photocopies */
+prm-location-items prm-service-button {
+  display: none;
+}
