@@ -3,6 +3,53 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
+  //all of this code just adds a note to the hold request form in Primo.
+  app.component('prmRequestAfter', {
+    bindings: {
+      parentCtrl: '<'
+    },
+    controller: 'PrimoRequestAfterController'
+  }).controller('PrimoRequestAfterController', ['$element', function($element){
+      try{
+        //The french note is encoded in UTF-8.  The browser will interpret it as the same encoding as the HTML page that embedded this script file.
+        //So, if the french note is not displayed correctly in the browser, serve all pages as UTF-8, or change the character encoding of this file.
+        var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US',
+            enNote = "If you need a specific chapter, section, volume, issue, part or page, please include this information in the note fields below.",
+            frNote = "Si vous avez besoin d'un chapitre, d'une section, d'un volume, d'un numéro, d'une partie ou d'une page précis(e) de l'œuvre demandée, veuillez l'indiquer dans la section « Note » ci-dessous.",
+            //MutationObserver isn't available in IE <11.  Ignore that; IE<=10 simply won't show the note.
+            domObserver = new MutationObserver(function(mutationList){
+              angular.forEach(mutationList, function(mutation){
+                //console.log('observerCallback', mutation);
+                if (mutation.addedNodes && mutation.addedNodes.length > 0){
+                  angular.forEach(mutation.addedNodes, function(node){
+                    //we want the note at the top of the <div> with this className
+                    var target = 'service-form-dynamic-panel',
+                        elemnt = angular.element(node);
+                    if (elemnt.hasClass(target)){
+                      elemnt.prepend("<div style='text-align:center'>" + ( lang == 'fr_FR' ? frNote : enNote ) + "</div>");
+                    }
+                  });
+                }
+              });
+            });
+
+        //the service-form is an empty div until we click "Place a Hold".
+        //This will notify us if "service-form" has children, that is,
+        //when "service-form" is actually populated with the form elements.
+        angular.forEach($element.parent().children(), function(e,i){
+          var target = 'service-form',
+              elemnt = angular.element(e);
+          if (elemnt.hasClass(target)){
+            domObserver.observe(e, {childList: true});
+          }
+        });
+      }catch(e){
+        //continue anyway.
+        console.log(e);
+      }
+    }
+  ]);
+
   app.component('prmServiceButtonAfter', {
     bindings: {
       parentCtrl: '='
@@ -106,7 +153,7 @@
     vm.$onInit = function(){
       var terms = '', searchFields = vm.parentCtrl.searchService.searchFieldsService;
 
-      if (searchFields.advancedSearch){
+      if (angular.isArray(searchFields.searchParams.query)){
         searchFields.searchParams.query.forEach(function(t){
           //each element in the query array will be a string structured like: 'field,operator,actual terms,BOOL'
           //e.g. 'any,contains,killer whales,AND'
@@ -303,7 +350,7 @@
     isPreferred = function(lib){
       return preferredLibs.indexOf(lib) >= 0;
     },
-    
+
     //straight compare of the string values
     libStringCompare = function(a,b){
       var aIdx = libSortOrder.indexOf(a),
