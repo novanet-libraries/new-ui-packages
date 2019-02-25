@@ -50,25 +50,6 @@
     }
   ]);
 
-  app.component('prmServiceButtonAfter', {
-    bindings: {
-      parentCtrl: '='
-    },
-    controller: function(){
-      var ctrl = this.parentCtrl;
-      //disallow item level holds
-      //(that is, services with type HoldRequest that specify an itemid)
-      try{
-        if (ctrl.service.type == 'HoldRequest' && ctrl.requestParameters.itemid){
-          ctrl.service.allowed = false;
-        }
-      }catch (e){
-        console.error("Error occured in custom.js, prmServiceButtonAfter controller function.");
-        console.error(e);
-      }
-    }
-  });
-
   //Hide virtual browse if callnumber is "Electronic Book" (or similar)
   //browse works on callnumber to show similar items; that doesn't work with these callnumbers.
   app.component('prmFullViewAfter', {
@@ -152,7 +133,7 @@
     vm.$onInit = function(){
       var terms = '', searchFields = vm.parentCtrl.searchService.searchFieldsService;
 
-      if (searchFields.advancedSearch){
+      if (angular.isArray(searchFields.searchParams.query)){
         searchFields.searchParams.query.forEach(function(t){
           //each element in the query array will be a string structured like: 'field,operator,actual terms,BOOL'
           //e.g. 'any,contains,killer whales,AND'
@@ -349,7 +330,7 @@
     isPreferred = function(lib){
       return preferredLibs.indexOf(lib) >= 0;
     },
-    
+
     //straight compare of the string values
     libStringCompare = function(a,b){
       var aIdx = libSortOrder.indexOf(a),

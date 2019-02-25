@@ -409,6 +409,8 @@ prm-account .tiles-grid {
   column-width: 24em;
 }
 
+/* hide button to cancel hold requests */
+button[aria-label="cancel request button"] { style:display:none; }
 
 /**** Advanced Search *****/
 /* bold the boolean operator drop-down */
@@ -459,7 +461,6 @@ prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
 
-
 /* novanet-library-hours custom directive */
 .novanet-library-hours header {
   font-weight: bold;
@@ -478,4 +479,9 @@ prm-service-header md-divider.md-primoExplore-theme {
 }
 .novanet-library-hours .today {
   margin: 0 1em 1em 1em;
+}
+
+/* hide item level holds and photocopies */
+prm-location-items prm-service-button {
+  display: none;
 }
