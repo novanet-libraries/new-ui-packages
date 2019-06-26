@@ -105,6 +105,7 @@
           CBU:   '9331274502214916509',
           DAL:   '5975043576360107395',
           KINGS: '5975043576360107395', //using Dal's
+          MTA:   '',
           MSVU:  '17224971713671833064',
           NSCC:  '6441348662430423134',
           NSCAD: '12584370207272605175',
@@ -209,6 +210,11 @@
         width: "112",
         usePng: true
       },
+      MTA:{
+        href: "http://libraryguides.mta.ca/main",
+        alt: "MTA Library",
+        width: "112"
+      },
       MSVU:{
         href: "http://www.msvu.ca/en/home/library/default.aspx",
         alt: "MSVU Library",
@@ -302,7 +308,7 @@
     var libSortOrder = [
       'NOVA', 'WWW', 'ACAD', 'AST', 'CBU',
       'DAL', 'DLNET', 'DNET', 'DLWKK', 'DLKIL', 'DLLAW', 'DLAGR', 'DLSXT',
-      'MSVU', 'MSCBC', 'MSCRC', 'NSCAD',
+      'MTA', 'MSVU', 'MSCBC', 'MSCRC', 'NSCAD',
       'NSCC', 'CCNET', 'CNET', 'CCAK', 'CCAV', 'CCBC', 'CCCU', 'CCIT', 'CCWC',
       'CCKC', 'CCLC', 'CCMC', 'CCPC', 'CCSC', 'CCSA', 'CCTR',
       'STFX', 'SFXMD', 'SFXCO', 'SFCRC', 'SMU', 'USA', 'KINGS'],
@@ -314,6 +320,7 @@
       'CBU'   : ['CBU'],
       'DAL'   : ['DAL', 'DLNET', 'DNET', 'DLKIL', 'DLAGR', 'DLWKK', 'DLLAW', 'DLSXT'],
       'KINGS' : ['KINGS'],
+      'MTA'   : ['MTA'],
       'MSVU'  : ['MSVU', 'MSCBC', 'MSCRC'],
       'NSCAD' : ['NSCAD'],
       'NSCC'  : ['NSCC', 'CCNET', 'CNET', 'CCAK', 'CCAV', 'CCBC', 'CCCU', 'CCIT', 'CCKC',
