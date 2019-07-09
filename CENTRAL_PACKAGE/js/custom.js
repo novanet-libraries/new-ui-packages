@@ -105,7 +105,7 @@
           CBU:   '9331274502214916509',
           DAL:   '5975043576360107395',
           KINGS: '5975043576360107395', //using Dal's
-          MTA:   '',
+          MTA:   '18327121220711970367', //this is their OCLC resolver, though.
           MSVU:  '17224971713671833064',
           NSCC:  '6441348662430423134',
           NSCAD: '12584370207272605175',
@@ -121,6 +121,7 @@
           DAL:     'https://dal.on.worldcat.org/search?queryString=',
           NSCC:    'https://nscc.on.worldcat.org/search?queryString=',
           NSCAD:   'https://nscad.on.worldcat.org/search?queryString=',
+          MTA:     'https://mta.on.worldcat.org/search?queryString=',
           MSVU:    'https://msvu.on.worldcat.org/search?queryString=',
           SMU:     'https://smu.on.worldcat.org/search?queryString=',
           STFX:    'https://stfx.on.worldcat.org/search?queryString='
