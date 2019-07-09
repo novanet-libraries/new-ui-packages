@@ -212,8 +212,7 @@
       },
       MTA:{
         href: "http://libraryguides.mta.ca/main",
-        alt: "MTA Library",
-        width: "112"
+        alt: "MTA Library"
       },
       MSVU:{
         href: "http://www.msvu.ca/en/home/library/default.aspx",
