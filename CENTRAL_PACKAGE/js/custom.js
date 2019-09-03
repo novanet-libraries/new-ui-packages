@@ -82,7 +82,10 @@
     template: '<seasonal-notice-card></seasonal-notice-card>'
   });
   app.component('prmTopbarAfter', {
-    template: '<live-help-widget></live-help-widget>'
+    //template: '<live-help-widget></live-help-widget>'
+    templateUrl: function(){
+      window.appConfig.vid == 'MTA' ? '' : 'custom/CENTRAL_PACKAGE/html/live-help-widget.html';
+    }
   });
 
   //add "try this search elsewhere" options
