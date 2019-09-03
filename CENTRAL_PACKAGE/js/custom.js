@@ -84,7 +84,7 @@
   app.component('prmTopbarAfter', {
     //template: '<live-help-widget></live-help-widget>'
     templateUrl: function(){
-      window.appConfig.vid == 'MTA' ? '' : 'custom/CENTRAL_PACKAGE/html/live-help-widget.html';
+      return window.appConfig.vid == 'MTA' ? '' : 'custom/CENTRAL_PACKAGE/html/live-help-widget.html';
     }
   });
 
