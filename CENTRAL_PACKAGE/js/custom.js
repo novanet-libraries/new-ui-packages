@@ -83,9 +83,6 @@
   });
   app.component('prmTopbarAfter', {
     template: '<live-help-widget></live-help-widget>'
-    //templateUrl: function(){
-    //  return window.appConfig.vid == 'MTA' ? '' : 'custom/CENTRAL_PACKAGE/html/live-help-widget.html';
-    //}
   });
 
   //add "try this search elsewhere" options
