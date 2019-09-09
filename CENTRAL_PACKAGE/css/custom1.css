@@ -485,3 +485,8 @@ prm-service-header md-divider.md-primoExplore-theme {
 prm-location-items prm-service-button {
   display: none;
 }
+
+/* hide the course icon until maybe we configure it correctly */
+.course-info-mark {
+    display: none;
+}
