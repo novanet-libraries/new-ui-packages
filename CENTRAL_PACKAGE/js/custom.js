@@ -444,7 +444,9 @@
     templateUrl: 'custom/CENTRAL_PACKAGE/html/live-help-widget.html'
   })
   .controller('LiveHelpController', ['$scope', 'angularLoad', function($scope, angularLoad){
-    var ctrl       = this,
+    var vid        = window.appConfig.vid,
+        isMTA      = vid.substr(0,3) == 'MTA',
+        ctrl       = this,
         chatWindow = null,
         chatUrl    = (function(){
           var url      = 'https://libraryh3lp.com/chat/novanet@chat.libraryh3lp.com',
@@ -463,21 +465,24 @@
         })();
 
     ctrl.$onInit = function (){
-      angularLoad.loadScript(
-        'https://libraryh3lp.com/js/libraryh3lp.js?multi,poll'
-      ).then(
-        function(){
-          //console.log('Loaded external libraryh3lp script.');
-        },
-        function(data){
-          console.error('Failed to load external libraryh3lp script.');
-          console.error(JSON.stringify(data, null, 2));
-      });
+      if (!isMTA){
+        angularLoad.loadScript(
+          'https://libraryh3lp.com/js/libraryh3lp.js?multi,poll'
+        ).then(
+          function(){
+            //console.log('Loaded external libraryh3lp script.');
+          },
+          function(data){
+            console.error('Failed to load external libraryh3lp script.');
+            console.error(JSON.stringify(data, null, 2));
+        });
+      }
     };
 
     $scope.liveHelpText = "Live Help";
-
-    $scope.showChat = function(evt){
+    $scope.isMTA = isMTA;
+    
+    $scope.showChat = isMTA? function(){ return true; } : function(evt){
       try{
         evt.stopPropagation();
 
@@ -492,7 +497,7 @@
         console.warn(e);
       }
     };
-    $scope.sayOffline = function(evt){
+    $scope.sayOffline = isMTA? function(){ return true; } : function(evt){
       try{
         evt.stopPropagation();
         alert("Offline");
@@ -501,7 +506,6 @@
         console.warn(e);
       }
     };
-
   }]); //end definition of LiveHelpController
 
 
