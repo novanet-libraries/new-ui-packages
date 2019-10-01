@@ -50,26 +50,6 @@
     }
   ]);
 
-  app.component('prmServiceButtonAfter', {
-    bindings: {
-      parentCtrl: '='
-    },
-    controller: function(){
-      var ctrl = this.parentCtrl;
-      //disallow item level holds
-      //(that is, services with type HoldRequest that specify an itemid)
-      try{
-        //temporary, disallow all holds for holiday break
-        if (ctrl.service.type == 'HoldRequest'){
-          ctrl.service.allowed = false;
-        }
-      }catch (e){
-        console.error("Error occured in custom.js, prmServiceButtonAfter controller function.");
-        console.error(e);
-      }
-    }
-  });
-
   //Hide virtual browse if callnumber is "Electronic Book" (or similar)
   //browse works on callnumber to show similar items; that doesn't work with these callnumbers.
   app.component('prmFullViewAfter', {
@@ -125,6 +105,7 @@
           CBU:   '9331274502214916509',
           DAL:   '5975043576360107395',
           KINGS: '5975043576360107395', //using Dal's
+          MTA:   '8840802410783793469',
           MSVU:  '17224971713671833064',
           NSCC:  '6441348662430423134',
           NSCAD: '12584370207272605175',
@@ -140,6 +121,7 @@
           DAL:     'https://dal.on.worldcat.org/search?queryString=',
           NSCC:    'https://nscc.on.worldcat.org/search?queryString=',
           NSCAD:   'https://nscad.on.worldcat.org/search?queryString=',
+          MTA:     'https://mta.on.worldcat.org/search?queryString=',
           MSVU:    'https://msvu.on.worldcat.org/search?queryString=',
           SMU:     'https://smu.on.worldcat.org/search?queryString=',
           STFX:    'https://stfx.on.worldcat.org/search?queryString='
@@ -228,6 +210,10 @@
         alt: "KINGS Library",
         width: "112",
         usePng: true
+      },
+      MTA:{
+        href: "http://libraryguides.mta.ca/main",
+        alt: "MTA Library"
       },
       MSVU:{
         href: "http://www.msvu.ca/en/home/library/default.aspx",
@@ -322,7 +308,7 @@
     var libSortOrder = [
       'NOVA', 'WWW', 'ACAD', 'AST', 'CBU',
       'DAL', 'DLNET', 'DNET', 'DLWKK', 'DLKIL', 'DLLAW', 'DLAGR', 'DLSXT',
-      'MSVU', 'MSCBC', 'MSCRC', 'NSCAD',
+      'MTA', 'MSVU', 'MSCBC', 'MSCRC', 'NSCAD',
       'NSCC', 'CCNET', 'CNET', 'CCAK', 'CCAV', 'CCBC', 'CCCU', 'CCIT', 'CCWC',
       'CCKC', 'CCLC', 'CCMC', 'CCPC', 'CCSC', 'CCSA', 'CCTR',
       'STFX', 'SFXMD', 'SFXCO', 'SFCRC', 'SMU', 'USA', 'KINGS'],
@@ -334,6 +320,7 @@
       'CBU'   : ['CBU'],
       'DAL'   : ['DAL', 'DLNET', 'DNET', 'DLKIL', 'DLAGR', 'DLWKK', 'DLLAW', 'DLSXT'],
       'KINGS' : ['KINGS'],
+      'MTA'   : ['MTA'],
       'MSVU'  : ['MSVU', 'MSCBC', 'MSCRC'],
       'NSCAD' : ['NSCAD'],
       'NSCC'  : ['NSCC', 'CCNET', 'CNET', 'CCAK', 'CCAV', 'CCBC', 'CCCU', 'CCIT', 'CCKC',
@@ -457,7 +444,9 @@
     templateUrl: 'custom/CENTRAL_PACKAGE/html/live-help-widget.html'
   })
   .controller('LiveHelpController', ['$scope', 'angularLoad', function($scope, angularLoad){
-    var ctrl       = this,
+    var vid        = window.appConfig.vid,
+        isMTA      = vid.substr(0,3) == 'MTA',
+        ctrl       = this,
         chatWindow = null,
         chatUrl    = (function(){
           var url      = 'https://libraryh3lp.com/chat/novanet@chat.libraryh3lp.com',
@@ -476,21 +465,24 @@
         })();
 
     ctrl.$onInit = function (){
-      angularLoad.loadScript(
-        'https://libraryh3lp.com/js/libraryh3lp.js?multi,poll'
-      ).then(
-        function(){
-          //console.log('Loaded external libraryh3lp script.');
-        },
-        function(data){
-          console.error('Failed to load external libraryh3lp script.');
-          console.error(JSON.stringify(data, null, 2));
-      });
+      if (!isMTA){
+        angularLoad.loadScript(
+          'https://libraryh3lp.com/js/libraryh3lp.js?multi,poll'
+        ).then(
+          function(){
+            //console.log('Loaded external libraryh3lp script.');
+          },
+          function(data){
+            console.error('Failed to load external libraryh3lp script.');
+            console.error(JSON.stringify(data, null, 2));
+        });
+      }
     };
 
     $scope.liveHelpText = "Live Help";
-
-    $scope.showChat = function(evt){
+    $scope.isMTA = isMTA;
+    
+    $scope.showChat = isMTA? function(){ return true; } : function(evt){
       try{
         evt.stopPropagation();
 
@@ -505,7 +497,7 @@
         console.warn(e);
       }
     };
-    $scope.sayOffline = function(evt){
+    $scope.sayOffline = isMTA? function(){ return true; } : function(evt){
       try{
         evt.stopPropagation();
         alert("Offline");
@@ -514,10 +506,9 @@
         console.warn(e);
       }
     };
-
   }]); //end definition of LiveHelpController
 
-/*
+
   //make a <novanet-library-hours> component, institutions can put it on the landing page (or anywhere, or nowhere)
   //to include it write something like: <novanet-library-hours sublibrary="DLKIL,DLAGR"></novanet-library-hours>
   app.component('novanetLibraryHours', {
@@ -555,7 +546,7 @@
     };
 
     $http.get(
-      'https://aleph1.novanet.ca/cgi-bin/hours-data.pl?sublibrary=' + $scope.sublibraryString
+      'https://aleph1.novanet.ca/novanet/hours-data.pl?sublibrary=' + $scope.sublibraryString
     ).then(
       function(response){
         $scope.hours = response.data;
@@ -638,6 +629,6 @@
       return output || input;
     };
   }); // end LibraryHours component definition.
-*/
+
 
 })();

@@ -1,59 +1,62 @@
-<md-card class="default-card">
-  <md-card-title>
-    <md-card-title-text>
-      <span class="md-headline">Where can I get help?</span>
-    </md-card-title-text>
-  </md-card-title>
-  <md-card-content>
+<div ng-if= " !isMTA ">
 
-    <!-- the JS from libraryh3lp.com will remove the display:none style if someone is online, accepting chat requests. -->
-    <div jid="novanet@chat.libraryh3lp.com" class="libraryh3lp" style="display:none">
-      <p><a href ng-click="showChat($event);">Ask a librarian</a> how to start your search.</p>
-    </div>
+  <md-card class="default-card">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Where can I get help?</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
 
-    <!-- the JS from libraryh3lp.com will remove the display:none style when there is no-one online. -->
-    <div class="libraryh3lp" style="display:none">
-      <p><a href ng-click="sayOffline($event);">Ask a librarian</a> how to start your search.</p>
-      <p><md-icon class="md-warn" md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.</p>
-    </div>
+      <!-- the JS from libraryh3lp.com will remove the display:none style if someone is online, accepting chat requests. -->
+      <div jid="novanet@chat.libraryh3lp.com" class="libraryh3lp" style="display:none">
+        <p><a href ng-click="showChat($event);">Ask a librarian</a> how to start your search.</p>
+      </div>
 
-    <!--
-      Summer
-    <div style="margin-top:3em">
-      <header><strong>Hours of Operation</strong></header>
-      <div layout="row">
-        LiveHelp will resume in September.
+      <!-- the JS from libraryh3lp.com will remove the display:none style when there is no-one online. -->
+      <div class="libraryh3lp" style="display:none">
+        <p><a href ng-click="sayOffline($event);">Ask a librarian</a> how to start your search.</p>
+        <p><md-icon class="md-warn" md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.</p>
       </div>
-    </div>
-    -->
-    <!--
-      Fall
-    -->
-    <div style="margin-top:3em">
-      <header><strong>Live Help Hours of Operation</strong></header>
-      <div layout="row">
-        <div flex>Mon&ndash;Thu</div><div flex="50">10am&ndash;10pm</div>
-      </div>
-      <div layout="row">
-        <div flex>Friday</div><div flex="50">10am&ndash;6pm</div>
-      </div>
-      <div layout="row">
-        <div flex>Saturday</div><div flex="50">No Service</div>
-      </div>
-      <div layout="row">
-        <div flex>Sunday</div><div flex="50">4pm&ndash;10pm</div>
-      </div>
-    </div>
-    <div style="margin-top:1em">
-      <header><strong>No Service</strong></header>
-      <div layout="row" title="Thanksgiving">Oct 8, 2018</div>
-      <div layout="row" title="Remembrance Day">Nov 12, 2018</div>
-      <div layout="row" title="Winter Break">Dec 8, 2018 &ndash; Jan 6, 2019</div>
-      <div layout="row" title="Heritage Day">Feb 18, 2019</div>
-      <div layout="row" title="Easter">Apr 19, 2019 &ndash; Apr 22, 2019</div>
-      <div layout="row" title="Victoria Day">May 20, 2019</div>
-    </div>
 
-    
-  </md-card-content>
-</md-card>
+      <!--
+        Summer
+        
+      <div style="margin-top:3em">
+        <header><strong>Hours of Operation</strong></header>
+        <div layout="row">
+          LiveHelp will resume in September.
+        </div>
+      </div>     
+      <!--
+        Fall
+       -->        
+      <div style="margin-top:3em">
+        <header><strong>Live Help Hours of Operation</strong></header>
+        <div layout="row">
+          <div flex>Mon&ndash;Thu</div><div flex="50">10am&ndash;10pm</div>
+        </div>
+        <div layout="row">
+          <div flex>Friday</div><div flex="50">10am&ndash;6pm</div>
+        </div>
+        <div layout="row">
+          <div flex>Saturday</div><div flex="50">No Service</div>
+        </div>
+        <div layout="row">
+          <div flex>Sunday</div><div flex="50">4pm&ndash;10pm</div>
+        </div>
+      </div>
+      <div style="margin-top:1em">
+        <header><strong>No Service</strong></header>
+        <div layout="row" title="Thanksgiving">Oct 14, 2019</div>
+        <div layout="row" title="Remembrance Day">Nov 11, 2019</div>
+        <div layout="row" title="Winter Break">Dec 7, 2019 &ndash; Jan 5, 2020</div>
+        <div layout="row" title="Heritage Day">Feb 17, 2020</div>
+        <div layout="row" title="Easter">Apr 10, 2020 &ndash; Apr 13, 2020</div>
+        <div layout="row" title="Victoria Day">May 18, 2020</div>
+      </div>
+      
+    </md-card-content>
+  </md-card>
+
+</div>

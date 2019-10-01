@@ -43,7 +43,7 @@ prm-logo img {
 }
 /*
 ** The logos will usually be wider now, so change the breakpoint at which the main menu
-** and user area collapse into the mobile menu button 
+** and user area collapse into the mobile menu button
 *
 @media (max-width: 959px) and (min-width: 720px){
   prm-topbar .hide-sm:not(.show-gt-xs):not(.show-sm):not(.show),
@@ -360,7 +360,7 @@ a:hover {
   z-index: 1000;
   border:2px solid white;
   border-radius: 0.2em;
-  background-color: #0075b0;  
+  background-color: #0075b0;
   color:white;
   box-shadow:0px 0px 2px 2px #0075b0;
 }
@@ -459,4 +459,34 @@ prm-service-header {
 }
 prm-service-header md-divider.md-primoExplore-theme {
   color: black;
+}
+
+/* novanet-library-hours custom directive */
+.novanet-library-hours header {
+  font-weight: bold;
+}
+.novanet-library-hours .times {
+  float: right;
+}
+.novanet-library-hours ul {
+  list-style-type: none;
+  margin: 1em;
+  padding: 0;
+}
+.novanet-library-hours li {
+  margin: 0;
+  padding: 0;
+}
+.novanet-library-hours .today {
+  margin: 0 1em 1em 1em;
+}
+
+/* hide item level holds and photocopies */
+prm-location-items prm-service-button {
+  display: none;
+}
+
+/* hide the course icon until maybe we configure it correctly */
+.course-info-mark {
+    display: none;
 }
