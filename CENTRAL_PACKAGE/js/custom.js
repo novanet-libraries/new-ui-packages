@@ -449,7 +449,7 @@
         ctrl       = this,
         chatWindow = null,
         chatUrl    = (function(){
-          var url      = 'https://libraryh3lp.com/chat/novanet@chat.libraryh3lp.com',
+          var url      = 'https://ca.libraryh3lp.com/chat/novanet@chat.libraryh3lp.com',
               skin     = '10162',
               theme    = 'gota',
               title    = 'Live Help',
@@ -467,7 +467,7 @@
     ctrl.$onInit = function (){
       if (!isMTA){
         angularLoad.loadScript(
-          'https://libraryh3lp.com/js/libraryh3lp.js?multi,poll'
+          'https://ca.libraryh3lp.com/js/libraryh3lp.js?multi,poll'
         ).then(
           function(){
             //console.log('Loaded external libraryh3lp script.');
