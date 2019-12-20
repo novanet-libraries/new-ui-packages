@@ -233,7 +233,7 @@
         usePng: true
       },
       NSCC:{
-        href: "http://www.library.nscc.ca/",
+        href: "https://www.nscc.ca/library",
         alt: "NSCC Libraries",
         width: "202",
         usePng: true
