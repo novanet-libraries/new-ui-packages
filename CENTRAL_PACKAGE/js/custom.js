@@ -449,7 +449,7 @@
         ctrl       = this,
         chatWindow = null,
         chatUrl    = (function(){
-          var url      = 'https://ca.libraryh3lp.com/chat/novanet@chat.libraryh3lp.com',
+          var url      = 'https://ca.libraryh3lp.com/chat/novanet@chat.ca.libraryh3lp.com',
               skin     = '10162',
               theme    = 'gota',
               title    = 'Live Help',
