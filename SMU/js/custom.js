@@ -12,7 +12,7 @@
     journalBrowZineWebLinkTextEnabled: true,
     journalBrowZineWebLinkText: "View Journal Contents",
 
-    acticleBrowZineWebLinkTextEnabled: true,
+    articleBrowZineWebLinkTextEnabled: true,
     articleBrowZineWebLinkText: "View Issue Contents",
 
     articlePDFDownloadLinkEnabled: true,
