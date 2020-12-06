@@ -445,7 +445,6 @@
   })
   .controller('LiveHelpController', ['$scope', 'angularLoad', function($scope, angularLoad){
     var vid        = window.appConfig.vid,
-        isMTA      = vid.substr(0,3) == 'MTA',
         ctrl       = this,
         chatWindow = null,
         chatUrl    = (function(){
@@ -465,24 +464,21 @@
         })();
 
     ctrl.$onInit = function (){
-      if (!isMTA){
-        angularLoad.loadScript(
-          'https://ca.libraryh3lp.com/js/libraryh3lp.js?multi,poll'
-        ).then(
-          function(){
-            //console.log('Loaded external libraryh3lp script.');
-          },
-          function(data){
-            console.error('Failed to load external libraryh3lp script.');
-            console.error(JSON.stringify(data, null, 2));
-        });
-      }
+      angularLoad.loadScript(
+        'https://ca.libraryh3lp.com/js/libraryh3lp.js?multi,poll'
+      ).then(
+        function(){
+          //console.log('Loaded external libraryh3lp script.');
+        },
+        function(data){
+          console.error('Failed to load external libraryh3lp script.');
+          console.error(JSON.stringify(data, null, 2));
+      });
     };
 
     $scope.liveHelpText = "Live Help";
-    $scope.isMTA = isMTA;
     
-    $scope.showChat = isMTA? function(){ return true; } : function(evt){
+    $scope.showChat = function(evt){
       try{
         evt.stopPropagation();
 
@@ -497,7 +493,7 @@
         console.warn(e);
       }
     };
-    $scope.sayOffline = isMTA? function(){ return true; } : function(evt){
+    $scope.sayOffline = function(evt){
       try{
         evt.stopPropagation();
         alert("Offline");
