@@ -74,7 +74,7 @@
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
-      return window.appConfig.vid == 'AST' ? '' : 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html';
+      return 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html';
     }
   });
 
