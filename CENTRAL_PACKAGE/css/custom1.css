@@ -8,7 +8,7 @@ prm-topbar .top-nav-bar {
   color: #c5cfd7;
 }
 prm-main-menu .md-button .item-content {
-  font-family: Georgia, Times New Roman, Times, serif;
+  /* font-family: Georgia, Times New Roman, Times, serif; */
   letter-spacing: default;
   color:#c5cfd7;
 }
@@ -333,7 +333,10 @@ prm-recomendation-item .media-on-hover .unpin-button {
 prm-main-menu[menu-type=full] md-card .md-headline {
   color: #cc9235;
   font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
-  font-weight: 300;
+  /* font-weight: 700; */
+}
+h2, .md-headline {
+  font-weight: 400;
 }
 md-backdrop.md-opaque {
   background-color: #2b6691;
