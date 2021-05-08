@@ -77,9 +77,14 @@
       return 'custom/CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html';
     }
   });
-
+  app.component('institutionNoticeCard', {
+    templateUrl: function(){
+      return 'custom/' + window.appConfig.vid + '/html/institution-notice_en_US.html';
+    }
+  });
+  
   app.component('prmAccountOverviewAfter', {
-    template: '<seasonal-notice-card></seasonal-notice-card>'
+    template: '<institution-notice-card></institution-notice-card><seasonal-notice-card></seasonal-notice-card>'
   });
   app.component('prmTopbarAfter', {
     template: '<live-help-widget></live-help-widget>'
