@@ -250,7 +250,7 @@
         usePng: true
       },
       STFX:{
-        href: "https://sites.stfx.ca/library",
+        href: "https://library.stfx.ca/",
         alt: "StFX Library",
         width: "188"
       },
