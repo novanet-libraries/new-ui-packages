@@ -246,7 +246,7 @@
       SMU:{
         href: "https://www.smu.ca/academics/the-patrick-power-library.html",
         alt: "Patrick Power Library",
-        width: "202",
+        width: "155",
         usePng: true
       },
       STFX:{
