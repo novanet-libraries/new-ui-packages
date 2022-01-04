@@ -193,7 +193,7 @@
         usePng: true
       },
       AST:{
-        href: "http://astheology.ns.ca/library/",
+        href: "http://www.astheology.ns.ca/ast-library/index.html",
         alt: "AST Library",
         width: "237",
         usePng: true
