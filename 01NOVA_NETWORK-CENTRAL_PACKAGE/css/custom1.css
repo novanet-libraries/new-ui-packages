@@ -407,17 +407,20 @@ prm-account>md-toolbar>button.offset-to-left {
   margin-left: 0;
 }
 
-/* widen the account overview boxes a little */
+/* widen the account overview boxes a little
 prm-account .tiles-grid {
   column-width: 24em;
 }
+*/
 
-/* hide button to cancel hold requests */
+/* hide button to cancel hold requests 
 button[aria-label="cancel request button"] { style:display:none; }
+*/
 
 /**** Advanced Search *****/
 /* bold the boolean operator drop-down */
 prm-advanced-search .uppercase { font-weight: bold; }
+
 
 /* hide the day and month drop-downs, but leave the year (not a drop-down) */
 /* prm-advanced-search .date-range-inputs md-select { display: none; }     */
@@ -425,9 +428,10 @@ prm-advanced-search .uppercase { font-weight: bold; }
 
 /***** Search Results List ****/
 
-/* adding the 'search elsewhere' box removes the need for this spacer */
+/* adding the 'search elsewhere' box removes the need for this spacer
 prm-search-result-list .list-spacer { height: 10px ; min-height: 10px; }
 prm-search-result-list .spacer-replacer { min-height: 200px; }
+*/
 
 
 /**** Full Display ****/
@@ -484,12 +488,14 @@ prm-service-header md-divider.md-primoExplore-theme {
   margin: 0 1em 1em 1em;
 }
 
-/* hide item level holds and photocopies */
+/* hide item level holds and photocopies 
 prm-location-items prm-service-button {
   display: none;
 }
+*/
 
-/* hide the course icon until maybe we configure it correctly */
+/* hide the course icon until maybe we configure it correctly 
 .course-info-mark {
     display: none;
 }
+*/

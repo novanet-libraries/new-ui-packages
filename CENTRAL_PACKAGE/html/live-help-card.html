@@ -1,0 +1,86 @@
+<div>
+
+  <md-card class="default-card">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Where can I get help?</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+
+
+      <!-- the JS from libraryh3lp.com will remove the display:none style if someone is online, accepting chat requests. -->
+      <div jid="novanet@chat.ca.libraryh3lp.com" class="libraryh3lp" style="display:none">
+        <p><a href ng-click="showChat($event);">Ask a librarian</a> how to start your search.</p>
+      </div>
+
+      <!-- the JS from libraryh3lp.com will remove the display:none style when there is no-one online. -->
+      <div class="libraryh3lp" style="display:none">
+        <p><a href ng-click="sayOffline($event);">Ask a librarian</a> how to start your search.</p>
+        <p><md-icon class="md-warn" md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.</p>
+      </div>
+
+
+
+      <!--
+        Summer
+
+      <div style="margin-top:3em">
+        <header><strong>Hours of Operation</strong></header>
+        <div layout="row">
+          LiveHelp will resume in September.
+        </div>
+      </div>
+      -->
+
+      <!--
+        Fall
+      -->
+
+      <div style="margin-top:3em">
+        <header><strong>Live Help Hours of Operation</strong></header>
+        <div layout="row" style="background:white">
+          <p class="md-flex"><md-icon class="md-info"></md-icon>Due to ongoing labour dispute at a Novanet institution, we have gaps in service. Please contact your home library for support.</p>
+        </div>
+        <div layout="row">
+          <div flex>Mon&ndash;Thu</div><div flex="50">10am&ndash;10pm</div>
+        </div>
+        <div layout="row">
+          <div flex>Friday</div><div flex="50">10am&ndash;6pm</div>
+        </div>
+        <div layout="row">
+          <div flex>Saturday</div><div flex="50">No Service</div>
+        </div>
+        <div layout="row">
+          <div flex>Sunday</div><div flex="50">4pm&ndash;10pm</div>
+        </div>
+      </div>
+      <div style="margin-top:1em">
+        <header><strong>No Service</strong></header>
+        <div layout="row" title="National Day for Truth and Reconciliation">Sep 30, 2021</div>
+        <div layout="row" title="Thanksgiving">Oct 11, 2021</div>
+        <div layout="row" title="Remembrance Day">Nov 11, 2021</div>
+        <div layout="row" title="Winter Break">Dec 11, 2021 &ndash; Jan 10, 2022</div>
+        <div layout="row" title="Heritage Day">Feb 21, 2022</div>
+        <div layout="row" title="Easter">Apr 15, 2022 &ndash; Apr 18, 2022</div>
+        <div layout="row" title="Victoria Day">May 23, 2022</div>
+      </div>
+
+       <!--
+        Spring
+        
+      <div style="margin-top:3em">
+        <header><strong>Live Help Hours of Operation</strong></header>
+        <div layout="row">
+          <div flex>Mon&ndash;Fri</div><div flex="50">10am&ndash;4pm</div>
+        </div>
+      </div>
+      <div style="margin-top:1em">
+        <header><strong>No Service</strong></header>
+        <div layout="row" title="Easter">Apr 2, 2021 &ndash; Apr 5, 2021</div>
+        <div layout="row" title="Victoria Day">May 24, 2021</div>
+      </div>
+    </md-card-content>
+  </md-card>
+       -->
+</div>
