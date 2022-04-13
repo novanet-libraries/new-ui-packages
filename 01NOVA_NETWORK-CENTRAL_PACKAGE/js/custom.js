@@ -284,63 +284,6 @@
     };
   });//end libraryFacetService definition
 
-/*
-  //add DocDel button to Actions list
-  app.component('prmActionListAfter', {
-    require: {
-      prmActionCtrl: '^prmActionList'
-    },
-    controller: 'DocDelActionController'
-  })
-  .controller('DocDelActionController', function(){
-    var vm = this;
-
-    vm.windowRef = {};  //keep references to open windows here rather than sending everything to "_blank"
-
-    vm.$onInit = function(){
-      //console.log('DocDelActionController $onInit()');
-
-      var actionCtrl = vm.prmActionCtrl,
-          idx = Object.keys(actionCtrl.actionListService.actionsToIndex).length -1,
-          name = 'RELAIS';
-
-      //no DocDel action configured for this item -- return.
-      if (!actionCtrl.item.link.docdelurl){
-        return;
-      }
-
-      actionCtrl.actionLabelNamesMap[name] = name;
-      actionCtrl.actionIconNamesMap[name]  = name;
-      actionCtrl.actionIcons[name] = {
-        icon: 'ic_local_shipping_24px',
-        iconSet: 'maps',
-        type: 'svg'
-      };
-      //the label under this icon is defined in Code Table
-      //"Keeping This Item Tile" as fulldisplay.command.RELAIS (because name="RELAIS" here in this controller)
-
-      if (undefined == actionCtrl.actionListService.actionsToIndex[name]){
-        actionCtrl.actionListService.requiredActionsList[idx] = name;
-        actionCtrl.actionListService.actionsToDisplay.unshift(name);
-        actionCtrl.actionListService.actionsToIndex[name] = idx;
-      }
-
-      console.log(actionCtrl);
-
-      actionCtrl.onToggle[name] = function(){
-        var rec_id = actionCtrl.item.pnx.control.recordid;
-        if (vm.windowRef[rec_id] && !vm.windowRef[rec_id].closed){
-          vm.windowRef[rec_id].focus();
-        }
-        else{
-          //vm.windowRef[rec_id] = window.open(actionCtrl.item.link.docdelurl, name + '_' + rec_id);
-          vm.windowRef[rec_id] = window.open(actionCtrl.item.link.openurl, name + '_' + rec_id);
-        }
-      };
-
-    };
-  });
-*/
 
   //define a <live-help-card> component that draws an <md-card> with "Ask a Librarian" in it.
   //the controller pulls in the requisite LibraryH3lp code to make it work.
