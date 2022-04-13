@@ -468,7 +468,8 @@ prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
 
-/* novanet-library-hours custom directive */
+/**** novanet-library-hours custom directive ****/
+
 .novanet-library-hours header {
   font-weight: bold;
 }
