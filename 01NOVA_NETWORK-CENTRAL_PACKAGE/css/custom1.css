@@ -468,6 +468,13 @@ prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
 
+/* hide 'request', etc. buttons in the 'Other Institutions' item list */
+prm-alma-other-members prm-service-button {
+  display: none;
+}
+prm-alma-other-members button[aria-label="register"] { display:none; } 
+
+
 /**** novanet-library-hours custom directive ****/
 
 .novanet-library-hours header {
