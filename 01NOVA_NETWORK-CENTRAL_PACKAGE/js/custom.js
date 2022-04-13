@@ -83,6 +83,18 @@
       }
     }
   });
+  app.component('prmLocationsAfter', {
+    bindings: {
+      parentCtrl: '='
+    },
+    controller: function(){
+      var vm = this;
+      vm.$onInit = function(){
+        vm.parentCtrl.showRegisterUser = function() { return false; };
+      }
+    }
+  });
+  
   
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
