@@ -495,15 +495,3 @@ prm-alma-other-members button[aria-label="register"] { display:none; }
 .novanet-library-hours .today {
   margin: 0 1em 1em 1em;
 }
-
-/* hide item level holds and photocopies 
-prm-location-items prm-service-button {
-  display: none;
-}
-*/
-
-/* hide the course icon until maybe we configure it correctly 
-.course-info-mark {
-    display: none;
-}
-*/
