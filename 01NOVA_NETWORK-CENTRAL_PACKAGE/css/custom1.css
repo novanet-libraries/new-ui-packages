@@ -472,8 +472,10 @@ prm-service-header md-divider.md-primoExplore-theme {
 prm-alma-other-members prm-service-button {
   display: none;
 }
+/*
+do this with JS instead
 prm-alma-other-members button[aria-label="register"] { display:none; } 
-
+*/
 
 /**** novanet-library-hours custom directive ****/
 

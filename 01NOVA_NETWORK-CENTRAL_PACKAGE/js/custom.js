@@ -71,6 +71,19 @@
     }
   });
 
+  //hide the "REGISTER" user button iin the list of items
+  app.component('prmLocationItemsAfter', {
+    bindings: {
+      parentCtrl: '='
+    },
+    controller: function(){
+      var vm = this;
+      vm.$onInit = function(){
+        vm.parentCtrl.showRegisterUser = function() { return false; };
+      }
+    }
+  });
+  
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
       var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
