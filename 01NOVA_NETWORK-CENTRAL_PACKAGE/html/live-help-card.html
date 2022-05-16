@@ -10,12 +10,12 @@
 
       <!-- the JS from libraryh3lp.com will remove the display:none style if someone is online, accepting chat requests. -->
       <div jid="novanet@chat.ca.libraryh3lp.com" class="libraryh3lp" style="display:none">
-        <p><a href ng-click="showChat($event);">Ask a librarian</a> how to start your search.</p>
+        <p><a href ng-click="showChat($event);">{{linkText}}</a></p>
       </div>
 
       <!-- the JS from libraryh3lp.com will remove the display:none style when there is no-one online. -->
       <div class="libraryh3lp" style="display:none">
-        <p><a href ng-click="sayOffline($event);">Ask a librarian</a> how to start your search.</p>
+        <p><a href ng-click="sayOffline($event);">{{linkText}}</a></p>
         <p><md-icon class="md-warn" md-svg-icon="content:ic_block_24px"></md-icon> LiveHelp is currently offline.</p>
       </div>
 
