@@ -236,7 +236,7 @@
     };
 
     $scope.liveHelpText = "Live Help";
-    $scope.linkText = window.appConfig.vid == '01NOVA_MTA:MTA' ? "Chat live with a librarian." : "Ask a librarian how to start your search.";
+    $scope.linkText = window.appConfig.vid == '01NOVA_MTA:MTA' ? "Novanet Live Help" : "Ask a librarian how to start your search.";
 
     $scope.showChat = function(evt){
       try{
