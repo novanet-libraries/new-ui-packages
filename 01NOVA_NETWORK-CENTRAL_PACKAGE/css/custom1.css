@@ -12,36 +12,12 @@ prm-main-menu .md-button .item-content {
   letter-spacing: default;
   color:#c5cfd7;
 }
-/* change the logo 
-prm-logo {
-  padding: 7px;
-}
-prm-logo .product-logo {
-  display: none;
-}
-prm-logo .product-logo-local {
-  display: block;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0;
-}
-prm-logo img {
-  display: inline-block;
-  margin: 0 3px;
-  height: 46px;
-  width: auto;
-}
-@media (max-width: 1279px) {
-  prm-logo .novanet-icon {
-    display: inline-block;
-  }
-}
-@media (min-width: 1280px){
-  prm-logo .novanet-icon {
-    display: none;
-  }
+/* Primo VE version of logo change */
+prm-logo .logo-image, prm-logo img {
+  min-height: 100%;
 }
 
+/*
 ** The logos will usually be wider now, so change the breakpoint at which the main menu
 ** and user area collapse into the mobile menu button
 *
