@@ -114,7 +114,28 @@
   app.component('prmTopbarAfter', {
     template: '<live-help-widget></live-help-widget>'
   });
-
+  
+  app.component('prmTopBarBefore', {
+    controller: 'TopBarBeforeController'
+  }).controller('TopBarBeforeController', [function(){
+    var vm = this;
+    vm.$onInit = function(){
+      if (location.hostname == 'novanet-primo.hosted.exlibrisgroup.com'){
+        var dns = window.appConfig.vid.substr(window.appConfig.vid.indexOf(':')+1);
+        if (dns == 'ACAD'){
+          dns = 'acadia';
+        }else if(dns == 'USA'){
+          dns = 'usainteanne';
+        }
+        else{
+          //all the other schools have a dns subdomain equal to their view code.
+          dns = dns.toLowerCase();
+        }
+        location.href = location.href.replace('novanet-primo.hosted.exlibrisgroup.com', dns+'.novanet.ca');
+      }
+    }
+  }]);
+  
   //add "try this search elsewhere" options
   app.component('prmSearchResultListAfter', {
     controller: 'SearchElsewhereController',
