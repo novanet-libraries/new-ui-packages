@@ -50,6 +50,10 @@
     }
   ]);
 
+/*
+  Don't want this anymore, in general.   Ebooks ought to be portfolios now, not holdings and items with callnumbers.
+  Also, code does not work as-is with the new Angular 1.8 update.  11/10/2022
+  
   //Hide virtual browse if callnumber is "Electronic Book" (or similar)
   //browse works on callnumber to show similar items; that doesn't work with these callnumbers.
   app.component('prmFullViewAfter', {
@@ -70,6 +74,8 @@
       }
     }
   });
+
+*/
 
   //hide the "REGISTER" user button iin the list of items
   app.component('prmLocationItemsAfter', {
