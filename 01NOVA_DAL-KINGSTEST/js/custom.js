@@ -27,9 +27,9 @@
           domObserver.observe(e, {childList: true, subtree: true});
         }
       });
-    }catch(e){
+    }catch(ex){
       //continue anyway.
-      console.log(e);
+      console.log(ex);
     }
     
   }]);
