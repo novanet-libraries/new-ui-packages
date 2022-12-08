@@ -21,7 +21,7 @@
         });
       });
 
-      angular.forEach($element.parent().children(), function(e,i){
+      angular.forEach($element.parent().children(), function(e){
         var elemnt = angular.element(e);
         if (elemnt.hasClass("service-form")){
           domObserver.observe(e, {childList: true, subtree: true});
