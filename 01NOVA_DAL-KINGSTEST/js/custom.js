@@ -31,7 +31,7 @@
       //continue anyway.
       console.log(ex);
     }
-    
+
   }]);
 
 })();
