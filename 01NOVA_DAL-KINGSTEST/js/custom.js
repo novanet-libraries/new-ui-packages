@@ -50,7 +50,7 @@
       angular.forEach($element.parent().children(), function(e,i){
         var elemnt = angular.element(e);
         if (elemnt.hasClass("service-form")){
-          domObserver.observe(e, {childList: true});
+          domObserver.observe(e, {childList: true, subtree: true});
         }
       });
     }catch(e){
