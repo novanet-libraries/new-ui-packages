@@ -12,12 +12,16 @@
     try{
       var domObserver = new MutationObserver(function(mutationList){
         angular.forEach(mutationList, function(mutation){
-          var spans = angular.element(mutation.target).find("span");
-          angular.forEach(spans, function(span){
-            if (span.innerText == "Dalhousie University"){
-              span.innerText = "Dalhousie or Kings";
-            }
-          });          
+
+          if (window.appConfig.vid.indexOf('KINGS') > -1){
+            var spans = angular.element(mutation.target).find("span");
+            angular.forEach(spans, function(span){
+              if (span.innerText == "Dalhousie University"){
+                span.innerText = "Dalhousie or Kings";
+              }
+            });
+          }
+
         });
       });
 
