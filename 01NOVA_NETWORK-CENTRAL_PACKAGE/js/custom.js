@@ -30,6 +30,17 @@
                     }
                   });
                 }
+
+                //fix institution name if we are in a KINGS view
+                if (window.appConfig.vid.indexOf('KINGS') > -1){
+                  var spans = angular.element(mutation.target).find("span");
+                  angular.forEach(spans, function(span){
+                    if (span.innerText == "Dalhousie University"){
+                      span.innerText = "Dalhousie or Kings";
+                    }
+                  });
+                }
+
               });
             });
 
@@ -40,7 +51,7 @@
           var target = 'service-form',
               elemnt = angular.element(e);
           if (elemnt.hasClass(target)){
-            domObserver.observe(e, {childList: true});
+            domObserver.observe(e, {childList: true, subtree: true});
           }
         });
       }catch(e){
