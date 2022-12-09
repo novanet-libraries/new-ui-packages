@@ -36,7 +36,7 @@
                   var spans = angular.element(mutation.target).find("span");
                   angular.forEach(spans, function(span){
                     if (span.innerText == "Dalhousie University"){
-                      span.innerText = "Dalhousie or Kings";
+                      span.innerText = "Dalhousie or King's";
                     }
                   });
                 }
