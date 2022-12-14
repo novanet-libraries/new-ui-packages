@@ -7,6 +7,12 @@ prm-topbar .top-nav-bar {
   background-repeat: repeat;
   color: #c5cfd7;
 }
+
+/* override the default rule that hides the main menu on the services (openurl) page */
+prm-topbar .isServicePage {
+  display: inline;  
+}
+
 prm-main-menu .md-button .item-content {
   /* font-family: Georgia, Times New Roman, Times, serif; */
   letter-spacing: default;
