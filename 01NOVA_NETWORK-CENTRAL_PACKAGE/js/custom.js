@@ -125,12 +125,24 @@
       return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-notice_' + lang + '.html';
     }
   });
-  
+  app.component('seasonalAlertBar', {
+    templateUrl: function(){
+      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      return 'custom/01NOVA_NETWORK-CENTRAL_PACKAGE/html/seasonal-alert-bar_' + lang + '.html';
+    }
+  });
+  app.component('institutionAlertBar', {
+    templateUrl: function(){
+      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-alert-bar_' + lang + '.html';
+    }
+  });
+
   app.component('prmAccountOverviewAfter', {
     template: '<institution-notice-card></institution-notice-card><seasonal-notice-card></seasonal-notice-card>'
   });
   app.component('prmTopbarAfter', {
-    template: '<live-help-widget></live-help-widget>'
+    template: '<institution-alert-bar></institution-alert-bar><seasonal-alert-bar></seasonal-alert-bar><live-help-widget></live-help-widget>'
   });
   
   app.component('prmTopBarBefore', {
