@@ -121,7 +121,8 @@
   });
   app.component('institutionNoticeCard', {
     templateUrl: function(){
-      return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-notice_en_US.html';
+      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-notice_' + lang + '.html';
     }
   });
   
