@@ -173,7 +173,7 @@
       'parentCtrl': '<'
     },
     templateUrl: function(){
-      var window.appConfig['primo-view']['attributes-map'].interfaceLanguage == 'fr' ? 'fr_FR' : 'en_US';
+      var lang = window.appConfig['primo-view']['attributes-map'].interfaceLanguage == 'fr' ? 'fr_FR' : 'en_US';
       return 'custom/01NOVA_NETWORK-CENTRAL_PACKAGE/html/search-elsewhere-' + lang + '.html';
     }
   })
