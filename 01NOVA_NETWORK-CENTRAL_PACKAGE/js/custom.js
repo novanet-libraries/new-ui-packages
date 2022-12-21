@@ -13,7 +13,7 @@
       try{
         //The french note is encoded in UTF-8.  The browser will interpret it as the same encoding as the HTML page that embedded this script file.
         //So, if the french note is not displayed correctly in the browser, serve all pages as UTF-8, or change the character encoding of this file.
-        var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US',
+        var lang = location.search.match(/lang=fr/) ? 'fr_FR' : 'en_US',
             enNote = "If you need a specific chapter, section, volume, issue, part or page, please include this information in the note fields below.",
             frNote = "Si vous avez besoin d'un chapitre, d'une section, d'un volume, d'un numéro, d'une partie ou d'une page précis(e) de l'œuvre demandée, veuillez l'indiquer dans la section « Note » ci-dessous.",
             //MutationObserver isn't available in IE <11.  Ignore that; IE<=10 simply won't show the note.
@@ -115,25 +115,25 @@
   
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
-      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      var lang = location.search.match(/lang=fr/) ? 'fr_FR' : 'en_US';
       return 'custom/01NOVA_NETWORK-CENTRAL_PACKAGE/html/seasonal-notice_' + lang + '.html';
     }
   });
   app.component('institutionNoticeCard', {
     templateUrl: function(){
-      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      var lang = location.search.match(/lang=fr/) ? 'fr_FR' : 'en_US';
       return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-notice_' + lang + '.html';
     }
   });
   app.component('seasonalAlertBar', {
     templateUrl: function(){
-      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      var lang = location.search.match(/lang=fr/) ? 'fr_FR' : 'en_US';
       return 'custom/01NOVA_NETWORK-CENTRAL_PACKAGE/html/seasonal-alert-bar_' + lang + '.html';
     }
   });
   app.component('institutionAlertBar', {
     templateUrl: function(){
-      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      var lang = location.search.match(/lang=fr/) ? 'fr_FR' : 'en_US';
       return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-alert-bar_' + lang + '.html';
     }
   });
@@ -173,7 +173,7 @@
       'parentCtrl': '<'
     },
     templateUrl: function(){
-      var lang = location.search.match(/lang=fr_FR/) ? 'fr_FR' : 'en_US';
+      var lang = location.search.match(/lang=fr/) ? 'fr_FR' : 'en_US';
       return 'custom/01NOVA_NETWORK-CENTRAL_PACKAGE/html/search-elsewhere-' + lang + '.html';
     }
   })
