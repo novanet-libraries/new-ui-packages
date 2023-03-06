@@ -1,5 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700);
 
+/* Ex Libris Support Case #06671122
+  this workaround fixes an error displaying thumbnail images within the Collection Discovery interface.
+  A real fix will be in a future release, but there was no ETA as of March 2023
+*/
+prm-gallery-collection > a.collection-folder > div.collection-images > div[ng-repeat="thumbnail in $ctrl.thumbnails track by $index"]:not(:first-of-type) { display:none !important; }
+
+
 /* topbar */
 prm-topbar .top-nav-bar {
   background-color: #555;
