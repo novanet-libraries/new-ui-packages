@@ -435,6 +435,19 @@ prm-full-view .services-index-under #services-index {
 }
 
 */
+
+/* alter the side navbar for fullview sections */
+prm-full-view-cont prm-full-view .services-index-under {
+  top: 15em;
+}
+.prm-full-view-dialog prm-full-view .services-index-under {
+  top: 17em;
+}
+.__gt-xs .full-view-section-content {
+  padding-left: 10em;
+}
+
+
 /* define the sections with colors and spacing */
 .full-view-container,
 .full-view-inner-container{
