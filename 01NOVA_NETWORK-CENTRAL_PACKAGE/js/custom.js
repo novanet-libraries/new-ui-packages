@@ -112,6 +112,20 @@
     }
   });
   
+  //hide the "Expand My Results" slider in the facets
+  app.component('prmFacetAfter', {
+    bindings: {
+      parentCtrl: '='
+    },
+    controller: function(){
+      var vm = this;
+      vm.$onInit = function(){
+        if (window.appConfig.vid != '01NOVA_STFX:STFX' && window.appConfig.vid != '01NOVA_DAL:DAL'){
+          vm.parentCtrl.showExpandMyResultsBtn = function() { return false; };
+        }
+      }
+    }
+  });
   
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
