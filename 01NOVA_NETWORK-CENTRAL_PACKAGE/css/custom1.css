@@ -425,7 +425,8 @@ prm-search-result-list .spacer-replacer { min-height: 200px; }
 
 /**** Full Display ****/
 
-/* remove the side navbar for sections */
+/* remove the side navbar for sections
+
 prm-full-view .services-index-under #services-index {
    display: none;
 }
@@ -433,6 +434,7 @@ prm-full-view .services-index-under #services-index {
   padding-left: 0;
 }
 
+*/
 /* define the sections with colors and spacing */
 .full-view-container,
 .full-view-inner-container{
