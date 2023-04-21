@@ -481,6 +481,10 @@ do this with JS instead
 prm-alma-other-members button[aria-label="register"] { display:none; } 
 */
 
+/* hide the static/unchanging Availability status label in the "Other Instituions" item list */
+prm-alma-other-members .availability-status {
+    display: none;
+}
 /**** novanet-library-hours custom directive ****/
 
 .novanet-library-hours header {
