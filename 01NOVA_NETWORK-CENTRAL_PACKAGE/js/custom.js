@@ -120,7 +120,9 @@
     controller: function(){
       var vm = this;
       vm.$onInit = function(){
-        if (window.appConfig.vid != '01NOVA_STFX:STFX' && window.appConfig.vid != '01NOVA_DAL:DAL'){
+        if (window.appConfig.vid != '01NOVA_STFX:STFX' &&
+            window.appConfig.vid != '01NOVA_DAL:DAL'   &&
+            window.appConfig.vid != '01NOVA_MTA:MTA'){
           vm.parentCtrl.showExpandMyResultsBtn = function() { return false; };
         }
       }
