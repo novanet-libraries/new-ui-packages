@@ -31,15 +31,13 @@
                   });
                 }
 
-                //fix institution name if we are in a KINGS view
-                if (window.appConfig.vid.indexOf('KINGS') > -1){
-                  var spans = angular.element(mutation.target).find("span");
-                  angular.forEach(spans, function(span){
-                    if (span.innerText == "Dalhousie University"){
-                      span.innerText = "Dalhousie or King's";
-                    }
-                  });
-                }
+                //fix institution name to include KINGS
+                var spans = angular.element(mutation.target).find("span");
+                angular.forEach(spans, function(span){
+                  if (span.innerText == "Dalhousie University"){
+                    span.innerText = "Dalhousie or King's";
+                  }
+                });
 
               });
             });
