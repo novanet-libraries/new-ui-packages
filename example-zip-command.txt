@@ -1,0 +1,9 @@
+example zip command for Mac OS terminal
+
+zip -r foldername.zip foldername -x '*/.*'
+
+-r = descend into directories
+foldername.zip and foldername must match the INST-LIBRARY pattern, e.g. 01NOVA_NETWORK-CENTRAL_PACKAGE
+-x '*/.*' = omit hidden files like '.DS_Store'
+
+zip -r 01NOVA_NETWORK-CENTRAL_PACKAGE.zip 01NOVA_NETWORK-CENTRAL_PACKAGE -x '*/.*'
