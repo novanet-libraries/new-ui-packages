@@ -301,6 +301,13 @@ prm-action-list md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-
     justify-content: space-around;
   }
 }
+.report-a-problem-bar {
+  background-color: #f5f5f5;
+  border: 1px solid #dedede;
+}
+.report-a-problem-bar span {
+  text-transform: none;
+}
 
 .result-item-actions .custom-button.pin-button,
 prm-add-query-to-saved-searches .custom-button.pin-button,
