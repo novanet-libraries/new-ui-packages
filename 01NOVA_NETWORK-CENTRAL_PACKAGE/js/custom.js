@@ -128,15 +128,34 @@
     }
   });
 
-  app.component('reportAProblem', {
+  app.component('prmActionListAfter', {
     templateUrl: function(){
       var lang = window.appConfig['primo-view']['attributes-map'].interfaceLanguage == 'fr' ? 'fr_FR' : 'en_US';
       return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/report-a-problem_' + lang + '.html';
+    },
+    controller:'ReportAProblemController',
+    bindings: {
+      parentCtrl: '<'
     }
-  });
-  app.component('prmActionListAfter', {
-    template: '<report-a-problem></report-a-problem>'
-  });
+  }).controller('ReportAProblemController', ['$scope',function($scope){
+    var vm = this;
+    vm.$onInit = function(){
+      var itemDetails = vm.parentCtrl.item && vm.parentCtrl.item.pnx && vm.parentCtrl.item.pnx.addata,
+          interestingFields = ['title','atitle','btitle','jtitle','genre','isbn','issn'];
+
+      if (!itemDetails){
+        return;
+      }
+      
+      $scope.itemDetails = [];
+      interestingFields.forEach(function(field){
+        $scope.itemDetails[field] = itemDetails[field] && itemDetails[field][0] || "";
+      });
+      $scope.openURL = Object.keys($scope.itemDetails).map(function(key){
+        return 'rft.' + key + '=' + encodeURIComponent($scope.itemDetails[key]);
+      }).join('&');
+    };
+  }]);
 
   app.component('seasonalNoticeCard', {
     templateUrl: function(){
