@@ -1,0 +1,16 @@
+/* for the video on the 01NOVA_USA:USA home page */
+#embedcontainer {
+  position: relative;
+}
+#embedcontainer::before {
+  content: "";
+  display: block;
+  padding-bottom: 56%; /*calculated from a 16x9 aspect ratio*/
+}  
+#embedcontainer > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}  
