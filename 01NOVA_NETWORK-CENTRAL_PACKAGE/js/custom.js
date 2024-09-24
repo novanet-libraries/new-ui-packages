@@ -141,7 +141,7 @@
     var vm = this;
     vm.$onInit = function(){
       var itemDetails = vm.parentCtrl.item && vm.parentCtrl.item.pnx && vm.parentCtrl.item.pnx.addata,
-          interestingFields = ['title','atitle','btitle','jtitle','genre','isbn','issn'];
+          interestingFields = ['title','atitle','btitle','jtitle','genre','isbn','issn','volume','issue'];
 
       if (!itemDetails){
         return;
@@ -151,6 +151,12 @@
       interestingFields.forEach(function(field){
         $scope.itemDetails[field] = itemDetails[field] && itemDetails[field][0] || "";
       });
+      if ($scope.itemDetails.title == ""){
+        $scope.itemDetails.title = $scope.itemDetails.atitle;
+      }
+      if ($scope.itemDetails.title == ""){
+        $scope.itemDetails.title = $scope.itemDetails.btitle;
+      }
       $scope.openURL = Object.keys($scope.itemDetails).map(function(key){
         return 'rft.' + key + '=' + encodeURIComponent($scope.itemDetails[key]);
       }).join('&');
