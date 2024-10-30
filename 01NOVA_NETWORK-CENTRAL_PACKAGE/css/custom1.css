@@ -429,6 +429,15 @@ prm-search-result-list .list-spacer { height: 10px ; min-height: 10px; }
 prm-search-result-list .spacer-replacer { min-height: 200px; }
 */
 
+/**** Collection Discovery ****/
+prm-collection-gallery-header .collection-info {
+  background-color: #333;
+  opacity: 0.7;
+  padding: 0.2em;
+}
+prm-collection-gallery-header .collection-info a {
+  color: #73e9ff;
+}
 
 /**** Full Display ****/
 
