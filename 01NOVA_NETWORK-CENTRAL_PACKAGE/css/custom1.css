@@ -430,6 +430,9 @@ prm-search-result-list .spacer-replacer { min-height: 200px; }
 */
 
 /**** Collection Discovery ****/
+prm-collection-gallery ..collection-header-inner {
+  background-color: #333;
+}
 prm-collection-gallery-header .collection-info {
   background-color: #333;
   opacity: 0.7;
