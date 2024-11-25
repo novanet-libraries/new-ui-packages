@@ -59,6 +59,36 @@
     }
   ]);
 
+  app.component('prmCitationLinkerAfter', {
+    bindings: {
+      parentCtrl: '<'
+    },
+    controller: 'PrimoCitationLinkerAfterController'
+  }).controller('PrimoCitationLinkerAfterController', ['$scope', function($scope){
+    var vm = this;
+    vm.$onInit = function(){
+      var formData = vm.parentCtrl.formData,
+      trimDOI = function(inputString){
+        if (!inputString) return "";
+        var doiString = inputString.trim(),
+            validStart = doiString.indexOf("10.");
+        return (validStart <= 0) ? doiString : doiString.substring(validStart);
+      };
+
+      //watch for changes to the DOI form field and trim (e.g.) https://doi.org/ off the beginning
+      $scope.$watch(
+        function(){
+          return formData['rft.doi'] || null;
+        },
+        function(newValue, oldValue){
+          if (newValue !== oldValue){
+            formData['rft.doi'] = trimDOI(newValue);
+          }
+        }
+      );
+    }
+  }]);
+
 /*
   Don't want this anymore, in general.   Ebooks ought to be portfolios now, not holdings and items with callnumbers.
   Also, code does not work as-is with the new Angular 1.8 update.  11/10/2022
