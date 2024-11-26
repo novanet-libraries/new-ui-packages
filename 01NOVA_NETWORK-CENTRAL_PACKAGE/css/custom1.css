@@ -372,6 +372,12 @@ a:hover {
   fill: tomato;
 }
 
+/***** Citation Linker ****/
+
+/* hide 'Journal' tab */
+prm-citation-linker md-radio-button[value="journal"] {
+  display: none;
+}
 
 /***** My Account ****/
 
