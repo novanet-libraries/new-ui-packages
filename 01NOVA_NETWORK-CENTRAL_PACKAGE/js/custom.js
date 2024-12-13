@@ -216,12 +216,27 @@
       return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-alert-bar_' + lang + '.html';
     }
   });
+  app.component('novanetFooter', {
+    templateUrl: function(){
+      var lang = window.appConfig['primo-view']['attributes-map'].interfaceLanguage == 'fr' ? 'fr_FR' : 'en_US';
+      return 'custom/01NOVA_NETWORK-CENTRAL_PACKAGE/html/novanet-footer_' + lang + '.html';
+    }
+  });
+  app.component('institutionFooter', {
+    templateUrl: function(){
+      var lang = window.appConfig['primo-view']['attributes-map'].interfaceLanguage == 'fr' ? 'fr_FR' : 'en_US';
+      return 'custom/' + window.appConfig.vid.replace(':', '-') + '/html/institution-footer_' + lang + '.html';
+    }
+  });
 
   app.component('prmAccountOverviewAfter', {
     template: '<institution-notice-card></institution-notice-card><seasonal-notice-card></seasonal-notice-card>'
   });
   app.component('prmTopbarAfter', {
     template: '<institution-alert-bar></institution-alert-bar><seasonal-alert-bar></seasonal-alert-bar><live-help-widget></live-help-widget>'
+  });
+  app.component('prmExploreFooterAfter', {
+    template: '<institution-footer></institution-footer><novanet-footer></novanet-footer>'
   });
   
   app.component('prmTopBarBefore', {
