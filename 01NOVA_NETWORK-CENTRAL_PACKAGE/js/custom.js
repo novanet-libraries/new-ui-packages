@@ -292,7 +292,7 @@
           DEFAULT: 'https://www.worldcat.org/search?q=',
           ACAD:    'https://acadiau.on.worldcat.org/search?queryString=',
           AST:     'https://ast.on.worldcat.org/search?queryString=',
-          CBU:     'https://cbu.on.worldcat.org/search?queryString=',
+//          CBU:     'https://cbu.on.worldcat.org/search?queryString=',
           DAL:     'https://dalhousieuniv-killamlibrary.on.worldcat.org/search?queryString=',
           KINGS:   'https://dal.on.worldcat.org/search?queryString=',
           NSCC:    'https://nscc.on.worldcat.org/search?queryString=',
