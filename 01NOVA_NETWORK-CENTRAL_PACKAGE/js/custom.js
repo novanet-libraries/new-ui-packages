@@ -299,7 +299,7 @@
           NSCAD:   'https://nscad.on.worldcat.org/search?queryString=',
           MTA:     'https://mta.on.worldcat.org/search?queryString=',
           MSVU:    'https://msvu.on.worldcat.org/search?queryString=',
-          SMU:     'https://smu.on.worldcat.org/search?queryString=',
+//          SMU:     'https://smu.on.worldcat.org/search?queryString=',
           STFX:    'https://stfx.on.worldcat.org/search?queryString='
         };
 
