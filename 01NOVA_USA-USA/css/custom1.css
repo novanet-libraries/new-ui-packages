@@ -14,3 +14,6 @@
   width: 100%;
   height: 100%;
 }  
+
+/* hide the file name in Alma Digital viewer */
+prm-representation-viewer span[id^="file_label"] {display: none}
