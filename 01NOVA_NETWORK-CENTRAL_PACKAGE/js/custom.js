@@ -3,6 +3,7 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
+/*
   //all of this code just adds a note to the hold request form in Primo.
   app.component('prmRequestAfter', {
     bindings: {
@@ -58,6 +59,7 @@
       }
     }
   ]);
+*/
 
   app.component('prmCitationLinkerAfter', {
     bindings: {
