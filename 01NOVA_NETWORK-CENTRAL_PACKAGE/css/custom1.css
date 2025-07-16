@@ -497,6 +497,11 @@ prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
 
+/* hide item-level request/digitization options */
+prm-location-items prm-service-button {
+  display: none;
+}
+
 /* hide 'request', etc. buttons in the 'Other Institutions' item list */
 prm-alma-other-members prm-service-button {
   display: none;
