@@ -501,6 +501,10 @@ prm-service-header md-divider.md-primoExplore-theme {
 prm-location-items prm-service-button {
   display: none;
 }
+prm-location-items .skewed-divider {
+  display:none;
+  width: 0;
+}
 
 /* hide 'request', etc. buttons in the 'Other Institutions' item list */
 prm-alma-other-members prm-service-button {
