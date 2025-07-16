@@ -3,64 +3,6 @@
 
   var app = angular.module('centralCustom', ['angularLoad']);
 
-/*
-  //all of this code just adds a note to the hold request form in Primo.
-  app.component('prmRequestAfter', {
-    bindings: {
-      parentCtrl: '<'
-    },
-    controller: 'PrimoRequestAfterController'
-  }).controller('PrimoRequestAfterController', ['$element', function($element){
-      try{
-        //The french note is encoded in UTF-8.  The browser will interpret it as the same encoding as the HTML page that embedded this script file.
-        //So, if the french note is not displayed correctly in the browser, serve all pages as UTF-8, or change the character encoding of this file.
-        var lang = window.appConfig['primo-view']['attributes-map'].interfaceLanguage == 'fr' ? 'fr_FR' : 'en_US',
-            enNote = "If you need a specific chapter, section, volume, issue, part or page, please include this information in the note fields below.",
-            frNote = "Si vous avez besoin d'un chapitre, d'une section, d'un volume, d'un numéro, d'une partie ou d'une page précis(e) de l'œuvre demandée, veuillez l'indiquer dans la section « Note » ci-dessous.",
-            //MutationObserver isn't available in IE <11.  Ignore that; IE<=10 simply won't show the note.
-            domObserver = new MutationObserver(function(mutationList){
-              angular.forEach(mutationList, function(mutation){
-                //console.log('observerCallback', mutation);
-                if (mutation.addedNodes && mutation.addedNodes.length > 0){
-                  angular.forEach(mutation.addedNodes, function(node){
-                    //we want the note at the top of the <div> with this className
-                    var target = 'service-form-dynamic-panel',
-                        elemnt = angular.element(node);
-                    if (elemnt.hasClass(target)){
-                      elemnt.prepend("<div style='text-align:center'>" + ( lang == 'fr_FR' ? frNote : enNote ) + "</div>");
-                    }
-                  });
-                }
-
-                //fix institution name to include KINGS
-                var spans = angular.element(mutation.target).find("span");
-                angular.forEach(spans, function(span){
-                  if (span.innerText == "Dalhousie University"){
-                    span.innerText = "Dalhousie or King's";
-                  }
-                });
-
-              });
-            });
-
-        //the service-form is an empty div until we click "Place a Hold".
-        //This will notify us if "service-form" has children, that is,
-        //when "service-form" is actually populated with the form elements.
-        angular.forEach($element.parent().children(), function(e,i){
-          var target = 'service-form',
-              elemnt = angular.element(e);
-          if (elemnt.hasClass(target)){
-            domObserver.observe(e, {childList: true, subtree: true});
-          }
-        });
-      }catch(e){
-        //continue anyway.
-        console.log(e);
-      }
-    }
-  ]);
-*/
-
   app.component('prmCitationLinkerAfter', {
     bindings: {
       parentCtrl: '='
@@ -90,33 +32,6 @@
     }
   }]);
   
-/*
-  Don't want this anymore, in general.   Ebooks ought to be portfolios now, not holdings and items with callnumbers.
-  Also, code does not work as-is with the new Angular 1.8 update.  11/10/2022
-  
-  //Hide virtual browse if callnumber is "Electronic Book" (or similar)
-  //browse works on callnumber to show similar items; that doesn't work with these callnumbers.
-  app.component('prmFullViewAfter', {
-    bindings: {
-      parentCtrl: '<'
-    },
-    controller: function (){
-      var cn;
-      try{
-        cn = this.parentCtrl.item.enrichment.virtualBrowseObject.callNumber;
-        if (cn.toLowerCase().substring(0,10) == 'electronic'){
-          console.log("removing virtualbrowse section because callnumber is: " + cn);
-          this.parentCtrl.item.enrichment.virtualBrowseObject.isVirtualBrowseEnabled = false;
-        }
-      }catch(e){
-        console.error("Error occured in custom.js, prmVirtualBrowseAfter controller function.");
-        console.error(e);
-      }
-    }
-  });
-
-*/
-
   //hide the "REGISTER" user button iin the list of items
   app.component('prmLocationItemsAfter', {
     bindings: {
