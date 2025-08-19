@@ -211,7 +211,7 @@ md-grid-tile .tile-content>.md-button,
   color: #2b6691;
   background-color: rgba(0, 139, 205, 0.1);
 }
-
+/*
 .md-button.button-as-link,
 .md-button.button-notice {
   color: #cc9235;
@@ -229,6 +229,7 @@ md-grid-tile .tile-content>.md-button,
   color: #cc9235;
   background-color: rgba(224, 131, 3, 0.1);
 }
+*/
 
 /* diamond progress bars */
 .diamond {
