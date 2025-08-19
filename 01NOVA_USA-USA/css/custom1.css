@@ -17,3 +17,12 @@
 
 /* hide the file name in Alma Digital viewer */
 prm-representation-viewer span[id^="file_label"] {display: none}
+
+/* add a little space between multiple 500-note fields that all appear consecutively under 'Public Note' */
+prm-service-details div.word-break span {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+prm-service-details div.word-break a span {
+  display: inline;
+}
