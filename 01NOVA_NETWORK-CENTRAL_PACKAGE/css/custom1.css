@@ -498,10 +498,12 @@ prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
 
-/* hide item-level request/digitization options */
+/* hide item-level request/digitization options
+-- moved this to custom.js so we can do it conditionally
 prm-location-items prm-service-button {
   display: none;
 }
+*/
 prm-location-items .skewed-divider {
   display:none;
   width: 0;
