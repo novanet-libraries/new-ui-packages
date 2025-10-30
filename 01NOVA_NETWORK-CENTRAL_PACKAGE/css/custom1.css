@@ -167,18 +167,18 @@ prm-topbar .md-button.button-over-dark {
 }
 
 body {
-  font-family: Source Sans Pro, Open Sans, Helvetica, Verdana, Arial, sans-serif;
+  font-family: var(--font-fam-body);
 }
 /* user name */
 prm-user-area .user-menu-button .user-name {
   color: #cc9235;
-  font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
+  font-family: var(--font-fam-title);
   font-weight: 500;
   letter-spacing: -0.5px;
 }
 
 .md-button {
-  font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
+  font-family: var(--font-fam-title);
   letter-spacing: -0.5px;
 }
 
@@ -272,7 +272,7 @@ mark {
 /* headers and titles */
 .section-title-header,
 .sidebar-header {
-  font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
+  font-family: var(--font-fam-title);
   font-weight: 600;
   font-size: 21px;
   color: #3a3a3a;
@@ -298,7 +298,7 @@ md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-acti
 md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-focused:not([disabled]),
 prm-add-query-to-saved-searches .custom-button,
 prm-action-list md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item:not([disabled]) {
-  font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
+  font-family: var(--font-fam-title);
   font-weight: 400;
   color: #2b6691;
   opacity: 1;
@@ -338,7 +338,7 @@ prm-recomendation-item .media-on-hover .unpin-button {
 
 prm-main-menu[menu-type=full] md-card .md-headline {
   color: #cc9235;
-  font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
+  font-family: var(--font-fam-title);
   /* font-weight: 700; */
 }
 h2, .md-headline {
@@ -501,7 +501,7 @@ prm-full-view-service-container {
 }
 prm-service-header {
   color: black;
-  font-family: Quicksand, Helvetica, Verdana, Arial, Source Sans Pro, Open Sans, sans-serif;
+  font-family: var(--font-fam-title);
 }
 prm-service-header md-divider.md-primoExplore-theme {
   color: black;
