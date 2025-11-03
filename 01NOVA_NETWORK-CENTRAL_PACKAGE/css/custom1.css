@@ -1,12 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700);
-
-/*
-ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol
-*/
 
 :root {
   --font-fam-body: "Source Sans Pro", "Open Sans", ui-sans-serif, -apple-system, system-ui, Arial, sans-serif;
-  --font-fam-title: Quicksand, "Arial Rounded MT", ui-sans-serif, -apple-system, system-ui, Arial, sans-serif;
+  --font-fam-title: Quicksand, Nunito, "Arial Rounded MT", ui-sans-serif, -apple-system, system-ui, Arial, sans-serif;
 }
 
 /* Ex Libris Support Case #06671122
