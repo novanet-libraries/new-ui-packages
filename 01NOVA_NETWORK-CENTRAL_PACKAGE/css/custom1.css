@@ -432,6 +432,16 @@ prm-advanced-search .uppercase { font-weight: bold; }
 /* hide the day and month drop-downs, but leave the year (not a drop-down) */
 /* prm-advanced-search .date-range-inputs md-select { display: none; }     */
 
+/***** Browse results *****/
+
+/* separate author and pub-date.
+  When author is formatted like: 'Last, First 1961-'
+  default display makes pub date look like death date.
+*/
+prm-browse-result .call-number-description span + span::before {
+  content: "\a©";
+  white-space: break-spaces;
+}
 
 /***** Search Results List ****/
 
