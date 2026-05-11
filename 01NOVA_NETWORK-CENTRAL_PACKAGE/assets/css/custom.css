@@ -1,0 +1,22 @@
+
+/* change header bar to black 
+header.top-bar {
+  background-color: #222;
+  color: white;
+}
+*/
+
+/* remove the 'books' image */
+.top-bar-background-image {
+  background-image: none;
+}
+
+/* put an icon before the 'Novanet' text above the search bar */
+.custom-search-bar-container h2:before {
+  content: '';
+  display: inline-flex;
+  height: 2em;
+  width: 2em; 
+  background-size: 2em 2em;
+  background-image: url('assets/icons/novanet-icon-white.svg');
+}
