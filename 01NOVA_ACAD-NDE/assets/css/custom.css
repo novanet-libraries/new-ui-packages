@@ -5,8 +5,12 @@ header.top-bar {
   color: white;
 }
 */
-
+:root{
+  /* darken the 'Resource Type' and 'Resource Indiciations' labels a bit */
+  --sys-outline: #404850;
+}
 /* put an icon before the text above the search bar */
+.custom-search-bar-container h1:before,
 .custom-search-bar-container h2:before {
   content: '';
   display: inline-block;
@@ -15,4 +19,14 @@ header.top-bar {
   vertical-align: bottom;
   background-size: 1.25em 1.25em;
   background-image: url('/nde/custom/01NOVA_ACAD-NDE/assets/icons/novanet-icon-white.svg');
+}
+/* put an icon before the library logo */
+.top-bar > .header-container > div:before {
+  content: '';
+  display: inline-block;
+  height: 2.75em;
+  width: 2.75em;
+  vertical-align: bottom;
+  background-size: 2.75em 2.75em;
+  background-image: url('/nde/custom/01NOVA_ACAD-NDE/assets/icons/novanet-icon-nde.svg');
 }
