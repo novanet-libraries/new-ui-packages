@@ -1,8 +1,0 @@
-
-/* make md-select scroll boxes a little bigger, so they (hopefully) don't scroll at all */
-@media screen and (min-height: 700px) {
-  md-select-menu,
-  md-select-menu md-content {
-    max-height: 512px;
-  }
-}
