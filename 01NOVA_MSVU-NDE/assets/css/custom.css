@@ -15,17 +15,6 @@
   background-image: url('/nde/custom/01NOVA_MSVU-NDE/assets/icons/novanet-icon-white.svg');
 }
 
-/* put an icon before the library logo */
-.top-bar > .header-container > div:before {
-  content: '';
-  display: inline-block;
-  height: 2.75em;
-  width: 2.75em;
-  vertical-align: bottom;
-  background-size: 2.75em 2.75em;
-  background-image: url('/nde/custom/01NOVA_MSVU-NDE/assets/icons/novanet-icon-nde.svg');
-}
-
 #nn-header {
   box-shadow: 0 1px 5px #1e1e1e33;
   height: 65px;
@@ -34,5 +23,7 @@
   float: left;
   margin: 0 5px;
   padding: 0;
-  
+}
+nde-logo img {
+  vertical-align: top;
 }
