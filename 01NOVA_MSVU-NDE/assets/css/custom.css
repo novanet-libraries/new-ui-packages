@@ -25,3 +25,14 @@
   background-size: 2.75em 2.75em;
   background-image: url('/nde/custom/01NOVA_MSVU-NDE/assets/icons/novanet-icon-nde.svg');
 }
+
+#nn-header {
+  box-shadow: 0 1px 5px #1e1e1e33;
+  height: 85px;
+}
+#nn-header .logo {
+  float: left;
+  margin: 0 5px;
+  padding: 0;
+  
+}
