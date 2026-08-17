@@ -33,7 +33,6 @@
   }]);
   
   //hide the "REGISTER" user button iin the list of items
-  // conditionally hide item-level requests (shown only for laptops)
   app.component('prmLocationItemsAfter', {
     bindings: {
       parentCtrl: '='
@@ -41,17 +40,7 @@
     controller: function(){
       var vm = this;
       vm.$onInit = function(){
-        var showItemLevelServices = false,
-            resourceType = vm.parentCtrl.item?.pnx?.display?.type;
-
         vm.parentCtrl.showRegisterUser = function() { return false; };
-        //console.log('prmLocationItemsAfter $onInit()', vm.parentCtrl);
-        if (resourceType && (resourceType === 'laptop' || resourceType.includes('laptop'))){
-          showItemLevelServices = true;
-        }
-        if (!showItemLevelServices){
-          vm.parentCtrl.allowService = function() { return false; };
-        }
       }
     }
   });
