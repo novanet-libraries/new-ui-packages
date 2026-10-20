@@ -512,6 +512,29 @@ prm-service-header md-divider.md-primoExplore-theme {
   color: black;
 }
 
+/*
+ Alter the display of the license terms after clicking "SHOW LICENSE" 
+ This requires Config/Resources/General/Other Settings "split_values_in_display_license" set to 'true'
+*/
+prm-alma-viewit-items .license span br {
+  display: block;
+}
+prm-alma-viewit-items dl.licenseTerm {
+  margin: 0 0 0.2em 1em;
+}
+prm-alma-viewit-items dl.licenseTerm dt.firstRow { 
+  display: inline-block;
+  vertical-align: top;
+  width: 37%;
+  font-weight: 600;
+}
+prm-alma-viewit-items dl.licenseTerm dd.secondRow {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 0.5em;
+}
+
+
 /* hide item-level request/digitization options
 -- moved this to custom.js so we can do it conditionally
 prm-location-items prm-service-button {
